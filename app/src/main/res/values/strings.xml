@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Testino</string>
+    <string name="app_name_per">تستینو</string>
+
+    <string name="welcome">سلام خوش آمدید</string>
+    <string name="login">لطفا در ادامه وارد شوید</string>
+    <string name="username">نام کاربری</string>
+    <string name="pass">رمز عبور</string>
+    <string name="log_in">ورود</string>
+    <string name="register_error">ثبت نام نکرده اید؟</string>
+    <string name="register">ثبت نام</string>
+
+
 </resources>

@@ -8,6 +8,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Testino" />
+        android:theme="@style/Theme.Testino">
+        <activity android:name=".ui.AuthActivity"></activity>
+        <activity android:name=".ui.SplashActivity" />
+    </application>
 
 </manifest>
