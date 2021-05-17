@@ -8,7 +8,6 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
-import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -89,7 +88,7 @@ public class LoginFragment extends Fragment {
                     PrefrenceManager.getInstance(getContext()).putToken(token);
                     PrefrenceManager.getInstance(getContext()).putUsername(Integer.parseInt(et_username.getText().toString().trim()));
                     PrefrenceManager.getInstance(getContext()).putUserType("admin");
-                    startActivity(new Intent(getContext(), DashBoardActivity.class));
+                    startActivity(new Intent(getContext(), DashboardActivity.class));
                     getActivity().finish();
                 } else {
                     SnackBarHelper.alert(getContext(),coordinatorLayout,error.trim());

@@ -32,11 +32,30 @@ public interface TestinoAPI {
 
     );
 
+    @FormUrlEncoded
+    @POST("addExam")
+    Call<Status> addExam(
+            @Field("name") String name,
+            @Field("desc") String desc,
+            @Field("startTime") String startTime,
+            @Field("creator") String username,
+            @Field("duration") String duration
+    );
+
+    @FormUrlEncoded
+    @GET("getExams")
+    Call<> getExams(
+            @Field("creator") String username
+    );
+
+
     interface TestNetworkCallback {
         void onResponse(Boolean isSuccessful);
 
         void onFailure(String cause);
     }
+
+
 
     interface LoginCallback{
         void onResponse(Boolean isSuccessful, String token, String error);
@@ -46,6 +65,11 @@ public interface TestinoAPI {
 
     interface registerCallback{
         void onResponse(Boolean isSuccessful, String token,String error);
+
+        void onFailure(String cause);
+    }
+    interface addExamCallback {
+        void onResponse(Boolean isSuccessful);
 
         void onFailure(String cause);
     }

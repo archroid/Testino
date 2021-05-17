@@ -102,7 +102,7 @@ public class RegisterFragment extends Fragment {
                     PrefrenceManager.getInstance(getContext()).putToken(token);
                     PrefrenceManager.getInstance(getContext()).putUsername(Integer.parseInt(username));
                     PrefrenceManager.getInstance(getContext()).putUserType("admin");
-                    startActivity(new Intent(getContext(), DashBoardActivity.class));
+                    startActivity(new Intent(getContext(), DashboardActivity.class));
                     getActivity().finish();
                 } else {
                     SnackBarHelper.alert(getContext(), coordinatorLayout, error.trim());

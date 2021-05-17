@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import xyz.archroid.testino.R;
 
-public class DashBoardActivity extends AppCompatActivity {
+public class DashboardActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dash_board);
+        setContentView(R.layout.activity_dashboard);
     }
 }
