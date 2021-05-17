@@ -9,6 +9,15 @@
     <string name="log_in">ورود</string>
     <string name="register_error">ثبت نام نکرده اید؟</string>
     <string name="register">ثبت نام</string>
+    <string name="error_username">!نام کاربری یافت نشد</string>
+    <string name="error_password">عدم تطابق اطلاعات!</string>
+    <string name="register_desc">تستینو، پلتفورم بومی آزمون های آنلاین</string>
+    <string name="email">پست الکترونیک</string>
+    <string name="login_error">قبلا ثبت نام کرده اید؟</string>
+    <string name="error_email">لطفا پست الکترونیک خود را بطور صحیح وارد کنید!</string>
+    <string name="error_emptyField">این فیلد نمیتواند خالی باشد. لطفا اطلاعات مورد نیاز را وارد کنید!</string>
+    <string name="teacher">استاد</string>
+    <string name="student">دانش آموز</string>
 
 
 </resources>

@@ -16,20 +16,35 @@ public class PrefrenceManager {
         }
         return instance;
     }
+
     private PrefrenceManager(Context context) {
         sharedPreferences = context.getSharedPreferences("porsooPreferences", Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
     }
 
-    public void putUserType(String userType){
+    public void putUserType(String userType) {
         editor.putString("userType", userType).apply();
     }
 
-    public String getUserType(){
+    public String getUserType() {
         return sharedPreferences.getString("userType", null);
     }
 
+    public void putUsername(int username) {
+        editor.putInt("username", username).apply();
+    }
 
+    public int getUsername() {
+        return sharedPreferences.getInt("username", 0);
+    }
+
+    public void putToken(String token) {
+        editor.putString("token", token).apply();
+    }
+
+    public String getToken() {
+        return sharedPreferences.getString("token", null);
+    }
 
 }

@@ -2,6 +2,7 @@ package xyz.archroid.testino.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 
@@ -22,11 +23,11 @@ public class SplashActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                if (PrefrenceManager.getInstance(SplashActivity.this).getUserType() == null) {
-//                    startActivity(new Intent(SplashActivity.this, WelcomeActivity.class));
+                if (PrefrenceManager.getInstance(SplashActivity.this).getToken() == null) {
+                    startActivity(new Intent(SplashActivity.this, AuthActivity.class));
                     finish();
                 } else {
-//                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                    startActivity(new Intent(SplashActivity.this, DashBoardActivity.class));
                     finish();
                 }
             }

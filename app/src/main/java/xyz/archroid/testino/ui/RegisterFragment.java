@@ -1,66 +1,122 @@
 package xyz.archroid.testino.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.google.android.material.textfield.TextInputEditText;
+
+import java.util.Objects;
+
+import xyz.archroid.testino.Data.RegisterController;
+import xyz.archroid.testino.Data.TestinoAPI;
+import xyz.archroid.testino.Helper.PrefrenceManager;
+import xyz.archroid.testino.Helper.SnackBarHelper;
 import xyz.archroid.testino.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link RegisterFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class RegisterFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public RegisterFragment() {
-        // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment RegisterFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static RegisterFragment newInstance(String param1, String param2) {
-        RegisterFragment fragment = new RegisterFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    private TestinoAPI.registerCallback registerCallback;
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    private TextInputEditText et_email, et_username, et_password;
+    private Button btn_register, btn_switch_login;
+
+    private String username;
+
+    private CoordinatorLayout coordinatorLayout;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_register, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_register, container, false);
+
+        et_email = view.findViewById(R.id.et_email);
+        et_username = view.findViewById(R.id.et_username);
+        et_password = view.findViewById(R.id.et_pass);
+
+        btn_register = view.findViewById(R.id.btn_register);
+        btn_switch_login = view.findViewById(R.id.btn_switch_login);
+
+        coordinatorLayout = view.findViewById(R.id.coordinator);
+
+        btn_register.setOnClickListener(v -> {
+
+            String email = et_email.getText().toString().trim();
+            String password = et_password.getText().toString().trim();
+            username = et_username.getText().toString();
+
+            // Check if data format is ok
+            if (
+                    email.isEmpty() ||
+                            email.lastIndexOf('@') <= 0 ||
+                            !email.contains(".") ||
+                            email.contains(" ") ||
+                            email.lastIndexOf('.') < email.lastIndexOf('@') ||
+                            email.split("@").length > 2 ||
+                            email.isEmpty()
+            ) {
+                SnackBarHelper.alert(getContext(), coordinatorLayout, getString(R.string.error_email));
+
+            } else if (username.isEmpty()) {
+                SnackBarHelper.alert(getContext(), coordinatorLayout, getString(R.string.error_emptyField));
+            } else if (password.isEmpty() || password.length() < 10 || password.contains(" ") || password.contains(".")) {
+                SnackBarHelper.alert(getContext(), coordinatorLayout, getString(R.string.error_emptyField));
+            } else {
+                PrefrenceManager.getInstance(getContext()).putUsername(Integer.parseInt(username));
+                PrefrenceManager.getInstance(getContext()).putUserType(null);
+                RegisterController registerController = new RegisterController(registerCallback);
+                registerController.start(
+                        username,
+                        password,
+                        email
+                );
+
+
+            }
+        });
+
+        btn_switch_login.setOnClickListener(v -> {
+            LocalBroadcastManager.getInstance(Objects.requireNonNull(getActivity())).sendBroadcast(new Intent("login_switch"));
+
+        });
+
+
+        registerCallback = new TestinoAPI.registerCallback() {
+            @Override
+            public void onResponse(Boolean isSuccessful, String token, String error) {
+                if (isSuccessful) {
+                    PrefrenceManager.getInstance(getContext()).putToken(token);
+                    PrefrenceManager.getInstance(getContext()).putUsername(Integer.parseInt(username));
+                    PrefrenceManager.getInstance(getContext()).putUserType("admin");
+                    startActivity(new Intent(getContext(), DashBoardActivity.class));
+                    getActivity().finish();
+                } else {
+                    SnackBarHelper.alert(getContext(), coordinatorLayout, error.trim());
+                }
+            }
+
+            @Override
+            public void onFailure(String cause) {
+                SnackBarHelper.alert(getContext(), coordinatorLayout, cause.trim());
+
+            }
+        };
+
+        return view;
     }
+
 }

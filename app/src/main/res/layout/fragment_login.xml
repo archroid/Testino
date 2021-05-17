@@ -1,133 +1,156 @@
-git m<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:layoutDirection="rtl"
-tools:context=".ui.LoginFragment">
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/coordinator"
-    />
+    android:layoutDirection="rtl"
+    tools:context=".ui.LoginFragment">
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_centerInParent="true">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-    <ImageView
-        android:id="@+id/iv_icon"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/icon_splash" />
-
-    <TextView
-        android:id="@+id/tv_welcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/iv_icon"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/welcome"
-        android:textColor="@color/primary"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/tv_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_welcome"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="5dp"
-        android:text="@string/login"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="15sp" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputLayout_username"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_login"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="30dp">
+        android:layout_centerInParent="true">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_username"
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/icon_splash" />
+
+        <TextView
+            android:id="@+id/tv_welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_icon"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/welcome"
+            android:textColor="@color/primary"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/tv_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_welcome"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/login"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputLayout_username"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_username"
-            android:drawablePadding="8dp"
-            android:drawableTint="@android:color/darker_gray"
-            android:hint="@string/username"
-            android:inputType="number"
-            android:textColorHint="@android:color/darker_gray"
-            tools:targetApi="m" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_below="@id/tv_login"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="30dp">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputLayout_pass"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/inputLayout_username"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="30dp"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_username"
+                android:drawablePadding="8dp"
+                android:drawableTint="@android:color/darker_gray"
+                android:hint="@string/username"
+                android:inputType="number"
+                android:textColorHint="@android:color/darker_gray"
+                tools:targetApi="m" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_pass"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputLayout_pass"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_password"
-            android:drawablePadding="8dp"
-            android:drawableTint="@android:color/darker_gray"
-            android:hint="@string/pass"
-            android:inputType="textPassword"
-            android:textColorHint="@android:color/darker_gray"
-            tools:targetApi="m" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_below="@id/inputLayout_username"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="30dp"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_password"
+                android:drawablePadding="8dp"
+                android:drawableTint="@android:color/darker_gray"
+                android:hint="@string/pass"
+                android:inputType="textPassword"
+                android:textColorHint="@android:color/darker_gray"
+                tools:targetApi="m" />
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/inputLayout_pass"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="30dp"
-        android:padding="10dp"
-        android:text="@string/log_in"
-        android:textSize="15sp" />
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/inputLayout_pass"
+            android:layout_marginRight="30dp"
+            android:orientation="horizontal"
 
-    <TextView
-        android:id="@+id/tv_register_error"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btn_login"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:text="@string/register_error"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="15sp" />
+            >
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_switch_register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_register_error"
-        android:layout_centerHorizontal="true"
-        android:background="@null"
-        android:text="@string/register"
-        android:textColor="@color/primary" />
+            <RadioButton
+                android:id="@+id/radioTeacher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/teacher" />
+
+            <RadioButton
+                android:id="@+id/radioStudent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/student" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/radioGroup"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            android:padding="10dp"
+            android:text="@string/log_in"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_register_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_login"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:text="@string/register_error"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_switch_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_register_error"
+            android:layout_centerHorizontal="true"
+            android:background="@null"
+            android:text="@string/register"
+            android:textColor="@color/primary" />
 
 
-</RelativeLayout>
+    </RelativeLayout>
 </RelativeLayout>

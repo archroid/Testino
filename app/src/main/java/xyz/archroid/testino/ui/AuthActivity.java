@@ -80,7 +80,6 @@ public class AuthActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         if (currentFragment.equals("login")){
-//            startActivity(new Intent(getApplicationContext(),WelcomeActivity.class));
             finish();
         } else{
             getSupportFragmentManager().beginTransaction()
