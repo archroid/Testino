@@ -18,6 +18,12 @@
     <string name="error_emptyField">این فیلد نمیتواند خالی باشد. لطفا اطلاعات مورد نیاز را وارد کنید!</string>
     <string name="teacher">استاد</string>
     <string name="student">دانش آموز</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">خانه</string>
+    <string name="question_bank">بانک سوالات</string>
+    <string name="students">دانش آموزان</string>
+    <string name="settings">تنظیمات</string>
 
 
 </resources>

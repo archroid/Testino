@@ -27,7 +27,7 @@ public class SplashActivity extends AppCompatActivity {
                     startActivity(new Intent(SplashActivity.this, AuthActivity.class));
                     finish();
                 } else {
-                    startActivity(new Intent(SplashActivity.this, DashboardActivity.class));
+                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
                     finish();
                 }
             }

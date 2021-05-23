@@ -1,15 +1,18 @@
 package xyz.archroid.testino.Data;
 
+import java.util.ArrayList;
+
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import xyz.archroid.testino.Model.Exam;
 import xyz.archroid.testino.Model.Status;
 import xyz.archroid.testino.Model.Token;
 
 public interface TestinoAPI {
-    String BASE_URL = "http://192.168.1.104:5000/";
+    String BASE_URL = "http://192.168.1.200:5000/";
 
 
     @GET("ping")
@@ -43,8 +46,8 @@ public interface TestinoAPI {
     );
 
     @FormUrlEncoded
-    @GET("getExams")
-    Call<> getExams(
+    @POST("getExams")
+    Call<ArrayList<Exam>> getExams(
             @Field("creator") String username
     );
 
@@ -56,20 +59,26 @@ public interface TestinoAPI {
     }
 
 
-
-    interface LoginCallback{
+    interface LoginCallback {
         void onResponse(Boolean isSuccessful, String token, String error);
 
         void onFailure(String cause);
     }
 
-    interface registerCallback{
-        void onResponse(Boolean isSuccessful, String token,String error);
+    interface registerCallback {
+        void onResponse(Boolean isSuccessful, String token, String error);
 
         void onFailure(String cause);
     }
+
     interface addExamCallback {
         void onResponse(Boolean isSuccessful);
+
+        void onFailure(String cause);
+    }
+
+    interface getExamsCallback {
+        void onResponse(Boolean isSuccessful, ArrayList<Exam> exams, String error);
 
         void onFailure(String cause);
     }
