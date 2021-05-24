@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="purple_200">#FFBB86FC</color>
-    <color name="primary">#FF6200EE</color>
-    <color name="primary_dark">#FF3700B3</color>
+
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
@@ -14,4 +13,14 @@
     <color name="yellow">#f0c674</color>
     <color name="green">#4CAF50</color>
     <color name="red">#f44336</color>
+
+    <color name="primary">#04656e</color>
+    <color name="primary_dark">#042d33</color>
+    <color name="accent">#a03e01</color>
+    <color name="background_dark">#111516</color>
+    <color name="background2">#042d33</color>
+    <color name="checked_background">#182627</color>
+    <color name="storke_unchecked">#252525</color>
+    <color name="light_blue">#23bdd9</color>
+
 </resources>

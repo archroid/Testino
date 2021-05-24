@@ -1,6 +1,7 @@
 package xyz.archroid.testino.Data;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -47,9 +48,10 @@ public interface TestinoAPI {
 
     @FormUrlEncoded
     @POST("getExams")
-    Call<ArrayList<Exam>> getExams(
-            @Field("creator") String username
+    Call<List<Exam>> getExams(
+      @Field("creator") String username
     );
+
 
 
     interface TestNetworkCallback {
@@ -78,9 +80,11 @@ public interface TestinoAPI {
     }
 
     interface getExamsCallback {
-        void onResponse(Boolean isSuccessful, ArrayList<Exam> exams, String error);
+        void onResponse(Boolean isSuccessful, List<Exam> exams, String error);
 
         void onFailure(String cause);
     }
+
+
 }
 

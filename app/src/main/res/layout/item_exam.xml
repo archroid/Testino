@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/item_background"
+    android:layoutDirection="rtl">
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="100dp"
+        android:layout_height="200dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/per" />
+
+
+    <RelativeLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:layout_toLeftOf="@id/iv_icon">
+
+        <TextView
+            android:id="@+id/tv_examName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="آزمون فارسی"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_examDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_examName"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="7dp"
+            android:text="آزمون دارای نمره منفی نمی باشد. موفق باشید!"
+            android:textColor="@android:color/primary_text_dark"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_questions"
+            android:layout_width="268dp"
+            android:layout_height="20dp"
+            android:layout_below="@id/tv_examDesc"
+            android:layout_marginTop="7dp"
+            android:text="20 سوال"
+            android:textColor="@android:color/primary_text_dark"
+            android:textSize="15sp"
+
+
+            />
+
+        <TextView
+            android:id="@+id/tv_starttime"
+            android:layout_width="268dp"
+            android:layout_height="20dp"
+            android:layout_below="@id/tv_questions"
+            android:layout_marginTop="7dp"
+            android:text="18:30 20/9/1400"
+            android:textColor="@android:color/primary_text_dark"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_duration"
+            android:layout_width="268dp"
+            android:layout_height="20dp"
+            android:layout_below="@id/tv_starttime"
+            android:layout_marginTop="7dp"
+            android:text="25 دقیقه"
+            android:textColor="@android:color/primary_text_dark"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_startExam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mainLayout"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/accent"
+        android:text="شرکت در آزمون"
+        android:textColor="@color/white" />
+
+
+</RelativeLayout>
