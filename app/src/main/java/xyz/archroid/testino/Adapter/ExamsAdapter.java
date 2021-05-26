@@ -43,7 +43,7 @@ public class ExamsAdapter extends RecyclerView.Adapter<ExamsAdapter.ViewHolder> 
         holder.tv_exam_desc.setText(exam.getEXAM_DESC());
         holder.tv_questions.setText("");
         holder.tv_startTime.setText(exam.getEXAM_STARTTIME());
-        holder.tv_duration.setText(exam.getEXAM_DURATION());
+        holder.tv_duration.setText(exam.getEXAM_DURATION() + " سوال");
 
     }
 

@@ -36,6 +36,8 @@
     <color name="header_color_text">#212121</color>
     <color name="white_background">#f4f9fa</color>
     <color name="Gray_Goose">#d1d0ce</color>
+    <color name="brandColor">#5dbcd2</color>
+    <color name="brandAccent">#ff8c00</color>
 
 
 
