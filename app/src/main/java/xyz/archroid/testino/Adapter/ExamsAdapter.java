@@ -60,7 +60,7 @@ public class ExamsAdapter extends RecyclerView.Adapter<ExamsAdapter.ViewHolder> 
         TextView tv_questions;
         TextView tv_startTime;
         TextView tv_duration;
-        Button btn_startExam;
+        Button btn_examAction;
         ImageView iv_icon;
 
         public ViewHolder(@NonNull View itemView) {
@@ -71,8 +71,8 @@ public class ExamsAdapter extends RecyclerView.Adapter<ExamsAdapter.ViewHolder> 
             tv_questions = itemView.findViewById(R.id.tv_questions);
             tv_startTime = itemView.findViewById(R.id.tv_starttime);
             tv_duration = itemView.findViewById(R.id.tv_duration);
-            btn_startExam = itemView.findViewById(R.id.btn_startExam);
-            iv_icon = itemView.findViewById(R.id.iv_icon);
+            btn_examAction = itemView.findViewById(R.id.btn_examAction);
+//            iv_icon = itemView.findViewById(R.id.iv_icon);
 
         }
     }
