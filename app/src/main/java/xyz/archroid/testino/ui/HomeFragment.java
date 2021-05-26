@@ -57,6 +57,10 @@ public class HomeFragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
 
+        btn_addExam.setOnClickListener(v -> {
+            
+        });
+
 
 
 
@@ -79,7 +83,7 @@ public class HomeFragment extends Fragment {
         GetExamsController getExamsController = new GetExamsController(getExamCallback);
         getExamsController.start(String.valueOf(PrefrenceManager.getInstance(getContext()).getUsername()));
 
-        tv_welcome.setText("خوش آمدید، " + PrefrenceManager.getInstance(getContext()).getUsername());
+        tv_welcome.setText(" " + PrefrenceManager.getInstance(getContext()).getUsername());
 
 
 

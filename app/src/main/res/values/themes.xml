@@ -13,6 +13,6 @@
         <item name="android:statusBarColor" tools:targetApi="l">@android:color/background_light</item>
         <!-- Customize your theme here. -->
 
-        <item name="fontFamily">@font/ttf_shabnam</item>
+        <item name="fontFamily">@font/iran_sans</item>
     </style>
 </resources>

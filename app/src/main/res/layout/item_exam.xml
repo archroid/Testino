@@ -12,7 +12,7 @@
         android:layout_height="200dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="10dp"
-        android:src="@drawable/per" />
+/>
 
 
     <RelativeLayout
@@ -28,7 +28,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="آزمون فارسی"
-            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -42,7 +41,6 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="7dp"
             android:text="آزمون دارای نمره منفی نمی باشد. موفق باشید!"
-            android:textColor="@android:color/primary_text_dark"
             android:textSize="15sp" />
 
         <TextView
@@ -52,7 +50,6 @@
             android:layout_below="@id/tv_examDesc"
             android:layout_marginTop="7dp"
             android:text="20 سوال"
-            android:textColor="@android:color/primary_text_dark"
             android:textSize="15sp"
 
 
@@ -65,7 +62,6 @@
             android:layout_below="@id/tv_questions"
             android:layout_marginTop="7dp"
             android:text="18:30 20/9/1400"
-            android:textColor="@android:color/primary_text_dark"
             android:textSize="15sp" />
 
         <TextView
@@ -75,7 +71,6 @@
             android:layout_below="@id/tv_starttime"
             android:layout_marginTop="7dp"
             android:text="25 دقیقه"
-            android:textColor="@android:color/primary_text_dark"
             android:textSize="15sp" />
 
     </RelativeLayout>
@@ -89,8 +84,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginBottom="10dp"
         android:backgroundTint="@color/accent"
-        android:text="شرکت در آزمون"
-        android:textColor="@color/white" />
+        android:text="شرکت در آزمون" />
 
 
 </RelativeLayout>

@@ -10,15 +10,35 @@
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottom_navigation_view" />
+        android:layout_above="@id/bottom_navigation_card_view" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation_view"
+    <com.google.android.material.card.MaterialCardView
+
+        android:id="@+id/bottom_navigation_card_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layoutDirection="rtl"
-        app:menu="@menu/navigation_view" />
+        android:layout_marginBottom="-10dp"
+        android:clipToPadding="false"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp"
+        app:strokeColor="@color/Gray_Goose"
+        app:strokeWidth="1dp">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layoutDirection="rtl"
+            android:paddingTop="5dp"
+            android:paddingBottom="12dp"
+            app:labelVisibilityMode="labeled"
+            android:background="@color/white"
+            app:menu="@menu/navigation_view"
+
+            />
+    </com.google.android.material.card.MaterialCardView>
 
 
 </RelativeLayout>

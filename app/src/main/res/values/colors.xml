@@ -16,11 +16,30 @@
 
     <color name="primary">#04656e</color>
     <color name="primary_dark">#042d33</color>
-    <color name="accent">#a03e01</color>
     <color name="background_dark">#111516</color>
     <color name="background2">#042d33</color>
     <color name="checked_background">#182627</color>
     <color name="storke_unchecked">#252525</color>
     <color name="light_blue">#23bdd9</color>
+
+
+
+    <color name="background_general">#f4fafa</color>
+    <color name="primary_very_light">#cff5fe</color>
+    <color name="primary_light">#64bdbb</color>
+    <color name="accent">#ff8b00</color>
+    <color name="stroke">#eeeeee</color>
+
+
+
+    <color name="card_view_shadow">@color/grey_300</color>
+    <color name="header_color_text">#212121</color>
+    <color name="white_background">#f4f9fa</color>
+    <color name="Gray_Goose">#d1d0ce</color>
+
+
+
+    <color name="grey_300">#e0e0e0</color>
+
 
 </resources>
