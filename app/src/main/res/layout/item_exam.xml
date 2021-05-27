@@ -180,7 +180,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="8dp"
-                android:text="ورود به آزمون"
+                android:text="تنظیمات آزمون"
                 android:textSize="14dp"
                 android:textStyle="bold" />
         </RelativeLayout>

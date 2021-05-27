@@ -28,12 +28,14 @@ public class GetExamsController {
             public void onResponse(Call<List<Exam>> call, Response<List<Exam>> response) {
                 if (response.isSuccessful()) {
                     getExamsCallback.onResponse(true, response.body(), null);
+                } else {
+                    getExamsCallback.onResponse(false, null, response.errorBody().toString());
                 }
             }
 
             @Override
             public void onFailure(Call<List<Exam>> call, Throwable t) {
-
+                getExamsCallback.onFailure(t.getMessage());
             }
         });
     }

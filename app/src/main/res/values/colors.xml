@@ -14,8 +14,8 @@
     <color name="green">#4CAF50</color>
     <color name="red">#f44336</color>
 
-    <color name="primary">#04656e</color>
-    <color name="primary_dark">#042d33</color>
+    <color name="primary">@color/brandColor</color>
+    <color name="primary_dark">@color/brandColor</color>
     <color name="background_dark">#111516</color>
     <color name="background2">#042d33</color>
     <color name="checked_background">#182627</color>
@@ -38,6 +38,7 @@
     <color name="Gray_Goose">#d1d0ce</color>
     <color name="brandColor">#5dbcd2</color>
     <color name="brandAccent">#ff8c00</color>
+    <color name="layout_shadow">#5e000000</color>
 
 
 

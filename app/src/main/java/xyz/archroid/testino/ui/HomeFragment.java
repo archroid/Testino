@@ -1,16 +1,19 @@
 package xyz.archroid.testino.ui;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -28,10 +31,10 @@ import xyz.archroid.testino.R;
 public class HomeFragment extends Fragment {
 
     private RecyclerView recyclerView;
-    private CircleImageView iv_profile;
+    private ImageView iv_profile;
     private TextView tv_welcome;
 
-    private FloatingActionButton btn_addExam;
+    private ImageView btn_addExam;
 
     private ExamsAdapter examsAdapter;
 
@@ -58,7 +61,9 @@ public class HomeFragment extends Fragment {
         recyclerView.setLayoutManager(linearLayoutManager);
 
         btn_addExam.setOnClickListener(v -> {
-            
+            Intent intent = new Intent(getContext() , AddExamActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
         });
 
 
@@ -71,11 +76,14 @@ public class HomeFragment extends Fragment {
                 if (isSuccessful) {
                     examsAdapter = new ExamsAdapter(exams, getContext());
                     recyclerView.setAdapter(examsAdapter);
+                } else {
+                    Toast.makeText(getContext(), error, Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(String cause) {
+                Toast.makeText(getContext(), cause, Toast.LENGTH_SHORT).show();
 
             }
         };
