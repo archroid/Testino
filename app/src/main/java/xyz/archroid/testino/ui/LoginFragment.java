@@ -2,21 +2,18 @@ package xyz.archroid.testino.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.appcompat.widget.AppCompatButton;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import androidx.fragment.app.Fragment;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 
-import com.google.android.material.textfield.TextInputEditText;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.fragment.app.Fragment;
 
-import java.util.Objects;
+import com.google.android.material.card.MaterialCardView;
 
 import xyz.archroid.testino.Data.LoginController;
 import xyz.archroid.testino.Data.TestinoAPI;
@@ -26,7 +23,7 @@ import xyz.archroid.testino.R;
 
 public class LoginFragment extends Fragment {
 
-    private TextInputEditText et_username, et_password;
+    private EditText et_username, et_password;
     private Button btn_login;
     private AppCompatButton btn_switch_register;
 
@@ -37,6 +34,8 @@ public class LoginFragment extends Fragment {
     private TestinoAPI.LoginCallback loginCallback;
 
     private CoordinatorLayout coordinatorLayout;
+
+    private MaterialCardView cardView_student, cardView_teacher;
 
     public LoginFragment() {
 
@@ -50,23 +49,42 @@ public class LoginFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_login, container, false);
 
         et_username = view.findViewById(R.id.et_username);
-        et_password = view.findViewById(R.id.et_pass);
+        et_password = view.findViewById(R.id.et_password);
 
         btn_login = view.findViewById(R.id.btn_login);
-        btn_switch_register = view.findViewById(R.id.btn_switch_register);
 
-        radio_student = view.findViewById(R.id.radioStudent);
+        cardView_student = view.findViewById(R.id.cardView_student);
+        cardView_teacher = view.findViewById(R.id.cardView_teacher);
+//        btn_switch_register = view.findViewById(R.id.btn_switch_register);
 
-        coordinatorLayout = view.findViewById(R.id.coordinator);
+//        radio_student = view.findViewById(R.id.radioStudent);
 
+
+//        coordinatorLayout = view.findViewById(R.id.coordinator);
+
+
+        cardView_student.setOnClickListener(v -> {
+            cardView_student.setActivated(true);
+            cardView_student.setStrokeColor(getResources().getColor(R.color.brandColor));
+            cardView_student.setCardBackgroundColor(getResources().getColor(R.color.light_brandColor));
+            cardView_teacher.setActivated(false);
+            cardView_teacher.setStrokeColor(getResources().getColor(R.color.grey_100));
+            cardView_teacher.setCardBackgroundColor(getResources().getColor(R.color.white));
+            userType = "student";
+
+
+        });
+        cardView_teacher.setOnClickListener(v -> {
+            cardView_student.setActivated(false);
+            cardView_teacher.setActivated(true);
+            cardView_student.setStrokeColor(getResources().getColor(R.color.grey_100));
+            cardView_student.setCardBackgroundColor(getResources().getColor(R.color.white));
+            cardView_teacher.setStrokeColor(getResources().getColor(R.color.brandColor));
+            cardView_teacher.setCardBackgroundColor(getResources().getColor(R.color.light_brandColor));
+            userType = "teacher";
+
+        });
         btn_login.setOnClickListener(v -> {
-
-            if (radio_student.isChecked()) {
-                userType = "student";
-            } else {
-                userType = "teacher";
-            }
-
 
             if (et_username.getText().toString().isEmpty()) {
                 SnackBarHelper.alert(getContext(), coordinatorLayout, getString(R.string.error_username));
@@ -91,19 +109,19 @@ public class LoginFragment extends Fragment {
                     startActivity(new Intent(getContext(), MainActivity.class));
                     getActivity().finish();
                 } else {
-                    SnackBarHelper.alert(getContext(),coordinatorLayout,error.trim());
+//                    SnackBarHelper.alert(getContext(),coordinatorLayout,error.trim());
                 }
             }
 
             @Override
             public void onFailure(String cause) {
-                SnackBarHelper.alert(getContext(),coordinatorLayout,cause.trim());
+//                SnackBarHelper.alert(getContext(),coordinatorLayout,cause.trim());
             }
         };
 
-        btn_switch_register.setOnClickListener(v -> {
-            LocalBroadcastManager.getInstance(Objects.requireNonNull(getActivity())).sendBroadcast(new Intent("register_switch"));
-        });
+//        btn_switch_register.setOnClickListener(v -> {
+//            LocalBroadcastManager.getInstance(Objects.requireNonNull(getActivity())).sendBroadcast(new Intent("register_switch"));
+//        });
 
         return view;
     }

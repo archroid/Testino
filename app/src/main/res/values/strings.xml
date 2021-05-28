@@ -26,6 +26,8 @@
     <string name="settings">تنظیمات</string>
     <string name="exam_desc">توضیحات آزمون:</string>
     <string name="add_new_exam">ایجاد آزمون جدید</string>
+    <string name="login_hint">برای ورود پس از انتخاب نوع کاربری نام کاربری و رمز عبور خود را وارد کنید</string>
+
 
 
 </resources>

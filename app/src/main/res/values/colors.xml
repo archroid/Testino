@@ -39,6 +39,10 @@
     <color name="brandColor">#5dbcd2</color>
     <color name="brandAccent">#ff8c00</color>
     <color name="layout_shadow">#5e000000</color>
+    <color name="grey_500">#9e9e9e</color>
+    <color name="grey_100">#efefef</color>
+    <color name="light_brandColor">#cff6ff</color>
+
 
 
 

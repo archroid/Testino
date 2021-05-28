@@ -23,4 +23,16 @@
         <item name="backgroundTint">@color/brandAccent</item>
         <item name="cornerRadius">10dp</item>
     </style>
+    <style name="Btn">
+        <item name="android:height">60dp</item>
+        <item name="android:radius">10dp</item>
+        <item name="android:fadeEnabled">true</item>
+        <item name="backgroundTint">@color/primary</item>
+        <item name="cornerRadius">10dp</item>
+    </style>
+
+    <style name="Theme.Testino.LoginActivity" parent="Theme.Testino">
+        <item name="android:statusBarColor">@color/brandColor</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+    </style>
 </resources>
