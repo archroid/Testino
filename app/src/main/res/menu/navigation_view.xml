@@ -11,19 +11,19 @@
     <item
         android:id="@+id/questions"
         android:enabled="true"
-        android:icon="@drawable/ic_question"
+        android:icon="@drawable/question"
         android:title="@string/question_bank"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/students"
         android:enabled="true"
-        android:icon="@drawable/ic_student"
+        android:icon="@drawable/student"
         android:title="@string/students"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/settings"
         android:enabled="true"
-        android:icon="@drawable/ic_settings"
+        android:icon="@drawable/settings"
         android:title="@string/settings"
         app:showAsAction="ifRoom" />
 

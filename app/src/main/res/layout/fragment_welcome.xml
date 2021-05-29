@@ -89,7 +89,7 @@
                     android:layout_height="30dp"
                     android:layout_gravity="center"
                     android:layout_margin="5dp"
-                    android:src="@drawable/teacher_ill" />
+                    android:src="@drawable/teacher" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -128,7 +128,7 @@
                     android:layout_height="30dp"
                     android:layout_gravity="center"
                     android:layout_margin="5dp"
-                    android:src="@drawable/student_ill" />
+                    android:src="@drawable/student" />
 
                 <TextView
                     android:layout_width="wrap_content"

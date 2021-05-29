@@ -46,8 +46,7 @@
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:focusable="true"
-                    android:padding="6dp"
-                    android:src="@drawable/ic_hamberger_menu" />
+                    android:padding="6dp" />
 
                 <View
                     android:id="@+id/view"
@@ -116,8 +115,7 @@
                         android:id="@+id/iv_userIcon"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/ic_admin" />
+                        android:layout_centerVertical="true" />
 
                 </RelativeLayout>
             </RelativeLayout>
@@ -142,8 +140,6 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="10dp"
         android:padding="10dp"
-        android:src="@drawable/ic_add"
-
         />
 
 

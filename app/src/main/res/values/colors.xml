@@ -8,7 +8,6 @@
     <color name="blue">#365FF4</color>
     <color name="yellow">#f0c674</color>
     <color name="green">#4CAF50</color>
-    <color name="red">#f44336</color>
     <color name="primary_dark">@color/brandColor</color>
     <color name="background_dark">#111516</color>
     <color name="background2">#042d33</color>
@@ -38,6 +37,7 @@
     <color name="primary">#399675</color>
     <color name="stork_color">#E1E1E1</color>
     <color name="card_bacnkground_color">#FBFBFB</color>
+    <color name="red">#f44336</color>
 
 
 

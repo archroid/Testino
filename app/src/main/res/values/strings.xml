@@ -10,18 +10,19 @@
     <string name="start">شروع کنید</string>
     <string name="login">ورود</string>
     <string name="login_error">نام کاربری یا رمز عبور صحیح نیست! </string>
+    <string name="forget_password">رمز عبور خود را فراموش کرده اید؟</string>
     <string name="username">نام کاربری</string>
     <string name="password">رمز عبور</string>
     <string name="powered_by_archroid">قدرت گرفته توسط آرچروید</string>
-
-
     <string name="home">خانه</string>
     <string name="question_bank">بانک سوالات</string>
     <string name="students">دانش آموزان</string>
     <string name="settings">تنظیمات</string>
+
+
     <string name="exam_desc">توضیحات آزمون:</string>
     <string name="add_new_exam">ایجاد آزمون جدید</string>
-    <string name="forget_password">رمز عبور خود را فراموش کرده اید؟</string>
+    <string name="join_testino">اشتراک تستینو ندارید؟ به ما ملحق شوید</string>
 
 
 </resources>
