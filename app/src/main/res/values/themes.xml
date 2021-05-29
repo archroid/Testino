@@ -2,13 +2,13 @@
     <!-- Base application theme. -->
     <style name="Theme.Testino" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/brandColor</item>
-        <item name="colorPrimaryVariant">@color/brandColor</item>
-        <item name="colorOnPrimary">@color/brandAccent  </item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary</item>
+        <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorSecondaryVariant">@color/accent</item>
+        <item name="colorOnSecondary">@color/white</item>
         <!-- Status bar color. -->
         <!-- Customize your theme here. -->
         <item name="fontFamily">@font/iran_sans</item>
@@ -16,23 +16,27 @@
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
     </style>
 
-    <style name="BtnAccent">
-        <item name="android:height">60dp</item>
-        <item name="android:radius">10dp</item>
-        <item name="android:fadeEnabled">true</item>
-        <item name="backgroundTint">@color/brandAccent</item>
-        <item name="cornerRadius">10dp</item>
-    </style>
-    <style name="Btn">
-        <item name="android:height">60dp</item>
+    <style name="ButtonStyle_primary">
         <item name="android:radius">10dp</item>
         <item name="android:fadeEnabled">true</item>
         <item name="backgroundTint">@color/primary</item>
-        <item name="cornerRadius">10dp</item>
+        <item name="cornerRadius">16dp</item>
     </style>
 
-    <style name="Theme.Testino.LoginActivity" parent="Theme.Testino">
-        <item name="android:statusBarColor">@color/brandColor</item>
+    <style name="ButtonStyle_accent">
+        <item name="android:radius">10dp</item>
+        <item name="android:fadeEnabled">true</item>
+        <item name="backgroundTint">@color/accent</item>
+        <item name="cornerRadius">16dp</item>
+    </style>
+
+    <style name="Theme.Testino.LoginActivity_lightStatusbar" parent="Theme.Testino">
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+    </style>
+
+    <style name="Theme.Testino.LoginActivity_primaryStatusbar" parent="Theme.Testino">
+        <item name="android:statusBarColor">@color/primary</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
     </style>
 </resources>

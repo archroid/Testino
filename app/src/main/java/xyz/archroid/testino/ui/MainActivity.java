@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
 
     private HomeFragment homeFragment = new HomeFragment();
+    private QuestionBankFragment questionBankFragment = new QuestionBankFragment();
 
 
     @Override
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.students:
                     return true;
                 case R.id.questions:
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.frameLayout, questionBankFragment).commit();
                     return true;
                 case R.id.settings:
                     return true;

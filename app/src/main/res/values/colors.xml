@@ -1,37 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="purple_200">#FFBB86FC</color>
-
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-
     <color name="TextColor">#c5c8c6</color>
-
     <color name="blue">#365FF4</color>
     <color name="yellow">#f0c674</color>
     <color name="green">#4CAF50</color>
     <color name="red">#f44336</color>
-
-    <color name="primary">@color/brandColor</color>
     <color name="primary_dark">@color/brandColor</color>
     <color name="background_dark">#111516</color>
     <color name="background2">#042d33</color>
     <color name="checked_background">#182627</color>
     <color name="storke_unchecked">#252525</color>
     <color name="light_blue">#23bdd9</color>
-
-
-
     <color name="background_general">#f4fafa</color>
     <color name="primary_very_light">#cff5fe</color>
     <color name="primary_light">#64bdbb</color>
     <color name="accent">#ff8b00</color>
     <color name="stroke">#eeeeee</color>
-
-
-
     <color name="card_view_shadow">@color/grey_300</color>
     <color name="header_color_text">#212121</color>
     <color name="white_background">#f4f9fa</color>
@@ -42,11 +30,16 @@
     <color name="grey_500">#9e9e9e</color>
     <color name="grey_100">#efefef</color>
     <color name="light_brandColor">#cff6ff</color>
-
-
-
-
     <color name="grey_300">#e0e0e0</color>
+
+    <color name="white">#FFFFFFFF</color>
+    <color name="light_text_color">#707070</color>
+    <color name="dark_text_color">#35383B</color>
+    <color name="primary">#399675</color>
+    <color name="stork_color">#E1E1E1</color>
+    <color name="card_bacnkground_color">#FBFBFB</color>
+
+
 
 
 </resources>

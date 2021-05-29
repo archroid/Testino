@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,11 +14,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 import java.util.List;
 
-import de.hdodenhof.circleimageview.CircleImageView;
 import xyz.archroid.testino.Adapter.ExamsAdapter;
 import xyz.archroid.testino.Data.GetExamsController;
 import xyz.archroid.testino.Data.TestinoAPI;
@@ -61,23 +57,25 @@ public class HomeFragment extends Fragment {
         recyclerView.setLayoutManager(linearLayoutManager);
 
         btn_addExam.setOnClickListener(v -> {
-            Intent intent = new Intent(getContext() , AddExamActivity.class);
+            Intent intent = new Intent(getContext(), AddExamActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
         });
-
-
-
 
 
         getExamCallback = new TestinoAPI.getExamsCallback() {
             @Override
             public void onResponse(Boolean isSuccessful, List<Exam> exams, String error) {
                 if (isSuccessful) {
-                    examsAdapter = new ExamsAdapter(exams, getContext());
-                    recyclerView.setAdapter(examsAdapter);
+                    if (exams != null) {
+                        examsAdapter = new ExamsAdapter(exams, getContext());
+                        recyclerView.setAdapter(examsAdapter);
+
+                    }
+
                 } else {
                     Toast.makeText(getContext(), error, Toast.LENGTH_SHORT).show();
+
                 }
             }
 
@@ -92,8 +90,6 @@ public class HomeFragment extends Fragment {
         getExamsController.start(String.valueOf(PrefrenceManager.getInstance(getContext()).getUsername()));
 
         tv_welcome.setText(" " + PrefrenceManager.getInstance(getContext()).getUsername());
-
-
 
 
         return view;

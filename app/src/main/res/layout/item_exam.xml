@@ -22,7 +22,7 @@
             android:layout_height="100dp"
             android:layout_alignParentRight="true"
             android:layout_margin="8dp"
-            android:src="@drawable/per" />
+            />
 
         <RelativeLayout
             android:id="@+id/layout1"
@@ -148,7 +148,7 @@
             android:layout_below="@id/layout3"
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
-            android:background="@drawable/dash_separator" />
+            />
 
         <RelativeLayout
             android:id="@+id/layout4"
@@ -173,7 +173,6 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_examAction"
-                style="@style/BtnAccent"
                 android:layout_width="wrap_content"
                 android:layout_height="45dp"
                 android:layout_below="@id/tv_examDesc"
