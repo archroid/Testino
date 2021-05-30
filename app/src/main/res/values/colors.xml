@@ -16,6 +16,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="light_text">#707070</color>
     <color name="dark_text">#35383B</color>
+    <color name="dark_text_grey">#6f6f6f</color>
     <color name="stork_color">#E1E1E1</color>
     <color name="card_background">#FBFBFB</color>
     <color name="card_background_blue">#f0f2f9</color>

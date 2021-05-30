@@ -18,6 +18,7 @@
         app:cardCornerRadius="16dp"
         app:strokeColor="@color/stork_color"
         android:layout_marginTop="5dp"
+        app:cardElevation="0dp"
         app:strokeWidth="1dp">
 
         <RelativeLayout
@@ -45,14 +46,14 @@
                     android:id="@+id/textView_username_home_fragment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="آرچروید"
+                    android:text="سید علی ابطحی"
                     android:textColor="@color/dark_text"
                     android:layout_marginRight="7dp"
                     android:textSize="18sp" />
 
             </LinearLayout>
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imageView_profile_home_fragment"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
@@ -60,7 +61,7 @@
                 android:layout_centerVertical="true"
                 android:layout_margin="10dp"
                 android:layout_marginLeft="15dp"
-                android:src="@drawable/student_color" />
+                android:src="@drawable/temp_profile" />
 
         </RelativeLayout>
 
@@ -70,5 +71,7 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/cardView_top_home_fragment" />
+        android:layout_below="@id/cardView_top_home_fragment"
+        android:padding="10dp"
+        />
 </RelativeLayout>

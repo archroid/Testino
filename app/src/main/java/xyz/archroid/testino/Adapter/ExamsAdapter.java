@@ -4,14 +4,14 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import com.google.android.material.card.MaterialCardView;
+
 import java.util.List;
 
 import xyz.archroid.testino.Model.Exam;
@@ -39,11 +39,9 @@ public class ExamsAdapter extends RecyclerView.Adapter<ExamsAdapter.ViewHolder> 
     public void onBindViewHolder(@NonNull ExamsAdapter.ViewHolder holder, int position) {
         final Exam exam = exams.get(position);
 
-        holder.tv_exam_name.setText(exam.getEXAM_NAME());
-        holder.tv_exam_desc.setText(exam.getEXAM_DESC());
-//        holder.tv_questions.setText("");
-        holder.tv_startTime.setText(exam.getEXAM_STARTTIME());
-        holder.tv_duration.setText(exam.getEXAM_DURATION() + " سوال");
+        holder.textView_name.setText(exam.getEXAM_NAME());
+//        holder.tv_startTime.setText(exam.getEXAM_STARTTIME());
+//        holder.tv_duration.setText(exam.getEXAM_DURATION() + " سوال");
 
     }
 
@@ -55,24 +53,22 @@ public class ExamsAdapter extends RecyclerView.Adapter<ExamsAdapter.ViewHolder> 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tv_exam_name;
-        TextView tv_exam_desc;
-        TextView tv_questions;
-        TextView tv_startTime;
-        TextView tv_duration;
-        Button btn_examAction;
-        ImageView iv_icon;
+        TextView textView_name, textView_questionCount, textView_startTime;
+        MaterialCardView button_1, button_2, button_3;
+
+
+        ImageView imageView_icon;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tv_exam_name = itemView.findViewById(R.id.tv_examName);
-            tv_exam_desc = itemView.findViewById(R.id.tv_examDesc);
-            tv_questions = itemView.findViewById(R.id.tv_questions);
-            tv_startTime = itemView.findViewById(R.id.tv_starttime);
-            tv_duration = itemView.findViewById(R.id.tv_duration);
-            btn_examAction = itemView.findViewById(R.id.btn_examAction);
-//            iv_icon = itemView.findViewById(R.id.iv_icon);
+            textView_name = itemView.findViewById(R.id.textView_examName_exam_item);
+            textView_questionCount = itemView.findViewById(R.id.textView_questionCount_exam_item);
+            textView_startTime = itemView.findViewById(R.id.textView_startTime_exam_item);
+            button_1 = itemView.findViewById(R.id.button_1_exam_item);
+            button_2 = itemView.findViewById(R.id.button_2_exam_item);
+            button_3 = itemView.findViewById(R.id.button_3_exam_item);
+            imageView_icon = itemView.findViewById(R.id.imageView_icon_exam_item);
 
         }
     }
