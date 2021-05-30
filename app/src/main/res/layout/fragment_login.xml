@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary"
+    android:fitsSystemWindows="true"
    >
 
     <ImageView
@@ -32,7 +33,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="23dp"
                 android:text="@string/login"
-                android:textColor="@color/dark_text_color"
+                android:textColor="@color/dark_text"
                 android:textSize="22sp"
 
                 />
@@ -58,11 +59,11 @@
                     android:layout_height="wrap_content"
                     android:drawableRight="@drawable/username"
                     android:drawablePadding="7dp"
-                    android:drawableTint="@color/dark_text_color"
+                    android:drawableTint="@color/dark_text"
                     android:hint="@string/username"
                     android:inputType="number"
-                    android:textColor="@color/dark_text_color"
-                    android:textColorHint="@color/dark_text_color" />
+                    android:textColor="@color/dark_text"
+                    android:textColorHint="@color/dark_text" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -87,10 +88,10 @@
                     android:layout_height="wrap_content"
                     android:drawableRight="@drawable/password"
                     android:drawablePadding="7dp"
-                    android:drawableTint="@color/dark_text_color"
+                    android:drawableTint="@color/dark_text"
                     android:hint="@string/password"
                     android:inputType="textPassword"
-                    android:textColor="@color/dark_text_color" />
+                    android:textColor="@color/dark_text" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -102,7 +103,7 @@
                 android:layout_alignRight="@id/inputLayout_password_login_fragment"
                 android:layout_marginTop="22dp"
                 android:text="@string/forget_password"
-                android:textColor="@color/dark_text_color"
+                android:textColor="@color/dark_text"
                 android:textSize="14sp" />
 
             <com.google.android.material.button.MaterialButton
@@ -125,7 +126,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layoutDirection="rtl"
-                app:cardBackgroundColor="@color/card_bacnkground_color"
+                app:cardBackgroundColor="@color/card_background"
                 app:cardCornerRadius="16dp"
                 app:strokeColor="@color/stork_color"
                 app:strokeWidth="1dp">
@@ -153,7 +154,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
                             android:text="@string/join_testino"
-                            android:textColor="@color/dark_text_color"
+                            android:textColor="@color/dark_text"
                             android:textSize="14sp" />
 
 

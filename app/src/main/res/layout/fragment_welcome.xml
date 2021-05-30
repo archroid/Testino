@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/background"
+    android:fitsSystemWindows="true"
     android:textDirection="rtl"
     tools:context=".ui.WelcomeFragment">
 
@@ -29,7 +30,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="23dp"
             android:text="@string/welcome_msg"
-            android:textColor="@color/dark_text_color"
+            android:textColor="@color/dark_text"
             android:textSize="20sp" />
 
 
@@ -42,7 +43,7 @@
             android:layout_marginTop="23dp"
             android:gravity="center"
             android:text="@string/welcome_desc"
-            android:textColor="@color/dark_text_color"
+            android:textColor="@color/dark_text"
             android:textSize="16sp"
 
             />
@@ -56,7 +57,7 @@
         android:layout_alignRight="@id/user_type_layout_welcome_fragment"
         android:layout_marginBottom="12dp"
         android:text="@string/welcome_select_userType"
-        android:textColor="@color/dark_text_color"
+        android:textColor="@color/dark_text"
         android:textSize="14sp" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -73,7 +74,7 @@
             android:layout_height="56dp"
             android:checkable="true"
             android:focusable="true"
-            app:cardBackgroundColor="@color/card_bacnkground_color"
+            app:cardBackgroundColor="@color/card_background"
             app:cardCornerRadius="16dp"
             app:strokeColor="@color/stork_color"
             app:strokeWidth="1dp">
@@ -89,7 +90,7 @@
                     android:layout_height="30dp"
                     android:layout_gravity="center"
                     android:layout_margin="5dp"
-                    android:src="@drawable/teacher" />
+                    android:src="@drawable/teacher_color" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -97,7 +98,7 @@
                     android:layout_gravity="center"
                     android:layout_margin="5dp"
                     android:text="@string/teacher"
-                    android:textColor="@color/dark_text_color"
+                    android:textColor="@color/dark_text"
                     android:textSize="14sp" />
 
 
@@ -112,7 +113,7 @@
             android:layout_marginRight="15dp"
             android:checkable="true"
             android:focusable="true"
-            app:cardBackgroundColor="@color/card_bacnkground_color"
+            app:cardBackgroundColor="@color/card_background"
             app:cardCornerRadius="16dp"
             app:strokeColor="@color/stork_color"
             app:strokeWidth="1dp">
@@ -128,7 +129,7 @@
                     android:layout_height="30dp"
                     android:layout_gravity="center"
                     android:layout_margin="5dp"
-                    android:src="@drawable/student" />
+                    android:src="@drawable/student_color" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -136,7 +137,7 @@
                     android:layout_gravity="center"
                     android:layout_margin="5dp"
                     android:text="@string/student"
-                    android:textColor="@color/dark_text_color"
+                    android:textColor="@color/dark_text"
                     android:textSize="14sp" />
 
 

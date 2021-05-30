@@ -2,6 +2,7 @@ package xyz.archroid.testino.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,11 +58,11 @@ public class LoginFragment extends Fragment {
 
             if (editText_username.getText().toString().isEmpty()) {
                 textView_error.setText(R.string.login_error);
-                layout_error.setVisibility(View.VISIBLE);
+                showErrorDialog();
 
             } else if (editText_password.getText().toString().isEmpty()) {
                 textView_error.setText(R.string.login_error);
-                layout_error.setVisibility(View.VISIBLE);
+                showErrorDialog();
 
             } else {
                 LoginController loginController = new LoginController(loginCallback);
@@ -81,18 +82,36 @@ public class LoginFragment extends Fragment {
                     getActivity().finish();
                 } else {
                     textView_error.setText(error.trim());
-                    layout_error.setVisibility(View.VISIBLE);
+                    showErrorDialog();
                 }
             }
 
             @Override
             public void onFailure(String cause) {
                 textView_error.setText(cause.trim());
-                layout_error.setVisibility(View.VISIBLE);
+                showErrorDialog();
             }
         };
 
 
         return view;
     }
+
+    private void showErrorDialog() {
+        layout_error.setAlpha(0.0f);
+        layout_error.setVisibility(View.VISIBLE);
+        layout_error.animate().alpha(1.0f);
+
+        new java.util.Timer().schedule(
+                new java.util.TimerTask() {
+                    @Override
+                    public void run() {
+                        layout_error.animate().alpha(0.0f);
+
+                    }
+                },
+                2000
+        );
+    }
+
 }

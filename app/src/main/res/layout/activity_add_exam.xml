@@ -15,8 +15,7 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/toolbar_wallet_fragment"
-            app:backgroundTint="@color/brandColor"
-            app:cardBackgroundColor="@color/brandColor"
+
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:gravity="center">
@@ -39,7 +38,6 @@
                     android:layout_marginRight="12dp"
                     android:gravity="right"
                     android:text="@string/add_new_exam"
-                    android:textColor="@color/header_color_text"
                     android:textSize="18dp"
                     android:textStyle="bold" />
             </LinearLayout>
