@@ -13,7 +13,7 @@ import xyz.archroid.testino.Model.Status;
 import xyz.archroid.testino.Model.Token;
 
 public interface TestinoAPI {
-    String BASE_URL = "http://192.168.1.200:5000/";
+    String BASE_URL = "http://192.168.1.101:5000/";
 
 
     @GET("ping")
@@ -43,7 +43,8 @@ public interface TestinoAPI {
             @Field("desc") String desc,
             @Field("startTime") String startTime,
             @Field("creator") String username,
-            @Field("duration") String duration
+            @Field("duration") String duration,
+            @Field("questionBankId") String questionBankId
     );
 
     @FormUrlEncoded

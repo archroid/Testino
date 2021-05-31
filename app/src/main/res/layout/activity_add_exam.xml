@@ -13,7 +13,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@drawable/cardview_toolbar_background">
+        android:background="@drawable/cardView_toolbar_background">
 
         <TextView
             android:layout_width="wrap_content"
@@ -24,7 +24,7 @@
             android:textSize="17sp" />
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/button_addExam"
+            android:id="@+id/button_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -33,13 +33,14 @@
             android:backgroundTint="@color/primary"
             android:clickable="true"
             android:focusable="true"
-            app:cardCornerRadius="12dp"
+            app:cardCornerRadius="22dp"
             app:cardElevation="0dp"
             app:strokeWidth="0dp">
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:layout_width="28dp"
                 android:layout_height="28dp"
+                android:layout_margin="5dp"
                 android:src="@drawable/back"
                 app:tint="@color/white" />
         </com.google.android.material.card.MaterialCardView>
@@ -54,35 +55,13 @@
         android:layout_marginTop="30dp">
 
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/button_reset"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="20dp"
-            android:backgroundTint="@color/white"
-            android:clickable="true"
-            android:focusable="true"
-            app:cardCornerRadius="22dp"
-            app:cardElevation="0dp"
-            app:strokeWidth="0dp">
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:src="@drawable/reset"
-                app:tint="@color/dark_text_grey" />
-        </com.google.android.material.card.MaterialCardView>
-
         <com.google.android.material.progressindicator.LinearProgressIndicator
             android:id="@+id/progressIndicator_addExam_Activity"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:progress="10"
-            app:indicatorColor="@color/accent"
+            android:progress="25"
+            app:indicatorColor="@color/primary"
             app:indicatorDirectionLinear="leftToRight"
             app:trackColor="#DAE0F0"
             app:trackCornerRadius="5dp"
@@ -94,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginRight="30dp"
-            android:text="1/5"
+            android:text="1/4"
             android:textColor="@color/dark_text_grey"
             android:textSize="14sp" />
     </RelativeLayout>
@@ -112,10 +91,11 @@
         android:textSize="16sp" />
 
     <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/textView_hint_addExam_activity"
-        android:id="@+id/frameLayout"/>
+        android:layout_margin="20dp"
+        android:layout_below="@id/textView_hint_addExam_activity" />
 
 
 </RelativeLayout>

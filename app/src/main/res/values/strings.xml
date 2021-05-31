@@ -22,7 +22,12 @@
     <string name="join_testino">اشتراک تستینو ندارید؟ به ما ملحق شوید</string>
     <string name="exam_desc">توضیحات آزمون</string>
     <string name="exam_title">عنوان آزمون</string>
-
+    <string name="exam_properties">مشخصات آزمون</string>
+    <string name="exam_name">نام آزمون</string>
+    <string name="question_count">تعداد سوالات</string>
+    <string name="exam_start_time">زمان شروع آزمون</string>
+    <string name="exam_desc">توضیحات آزمون</string>
+    <string name="exam_duration">مدت زمان آزمون (به دقیقه)</string>
 
 
 </resources>

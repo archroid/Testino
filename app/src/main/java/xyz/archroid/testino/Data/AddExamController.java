@@ -25,7 +25,7 @@ public class AddExamController {
                 .build();
 
         TestinoAPI testinoAPI = retrofit.create(TestinoAPI.class);
-        Call<Status> call = testinoAPI.addExam(name, desc, startTime, username, duration);
+        Call<Status> call = testinoAPI.addExam(name, desc, startTime, username, duration , null);
         call.enqueue(new Callback<Status>() {
             @Override
             public void onResponse(Call<Status> call, Response<Status> response) {
