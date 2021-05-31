@@ -14,6 +14,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.card.MaterialCardView;
+
 import java.util.List;
 
 import xyz.archroid.testino.Adapter.ExamsAdapter;
@@ -33,6 +35,7 @@ public class HomeFragment extends Fragment {
     private ImageView button_addExam;
     private TextView textView_username;
 
+    private MaterialCardView cardView_noExam;
 
     private String userType;
 
@@ -51,16 +54,24 @@ public class HomeFragment extends Fragment {
         textView_username = view.findViewById(R.id.textView_username_home_fragment);
         recyclerView = view.findViewById(R.id.recyclerView);
 
+        cardView_noExam = view.findViewById(R.id.cardView_noExam_home_fragment);
+
+        button_addExam = view.findViewById(R.id.button_addExam);
+
 
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
 
-//        button_addExam.setOnClickListener(v -> {
-//            Intent intent = new Intent(getContext(), AddExamActivity.class);
-//            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//            startActivity(intent);
-//        });
+        if (!userType.equals("admin")){
+            button_addExam.setVisibility(View.GONE);
+        }
+
+        button_addExam.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), AddExamActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        });
 
 
         getExamCallback = new TestinoAPI.getExamsCallback() {
@@ -68,9 +79,11 @@ public class HomeFragment extends Fragment {
             public void onResponse(Boolean isSuccessful, List<Exam> exams, String error) {
                 if (isSuccessful) {
                     if (exams != null) {
+                        cardView_noExam.setVisibility(View.GONE);
                         examsAdapter = new ExamsAdapter(exams, getContext());
                         recyclerView.setAdapter(examsAdapter);
-
+                    } else {
+                        cardView_noExam.setVisibility(View.VISIBLE);
                     }
 
                 } else {
