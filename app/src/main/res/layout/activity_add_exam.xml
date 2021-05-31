@@ -105,10 +105,17 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/layout_progress"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:background="@color/background"
         android:text="نام و مشخصات آزمون را وارد کنید"
         android:textColor="@color/dark_text_grey"
         android:textSize="16sp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/textView_hint_addExam_activity"
+        android:id="@+id/frameLayout"/>
+
 
 </RelativeLayout>

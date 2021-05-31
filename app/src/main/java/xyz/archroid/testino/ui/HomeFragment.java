@@ -32,7 +32,7 @@ public class HomeFragment extends Fragment {
     private RecyclerView recyclerView;
     private ExamsAdapter examsAdapter;
 
-    private ImageView button_addExam;
+    private MaterialCardView button_addExam;
     private TextView textView_username;
 
     private MaterialCardView cardView_noExam;

@@ -2,7 +2,6 @@ package xyz.archroid.testino.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,7 +43,7 @@ public class LoginFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_login, container, false);
 
-        editText_username = view.findViewById(R.id.editText_username_login_fragment);
+        editText_username = view.findViewById(R.id.editText_name_addExam_fragment);
         editText_password = view.findViewById(R.id.editText_password_login_fragment);
 
         layout_error = view.findViewById(R.id.layout_error);

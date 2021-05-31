@@ -54,7 +54,7 @@
                 app:boxCornerRadiusTopStart="15dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editText_username_login_fragment"
+                    android:id="@+id/editText_name_addExam_fragment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableRight="@drawable/username"

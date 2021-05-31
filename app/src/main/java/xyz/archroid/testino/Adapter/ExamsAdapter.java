@@ -1,6 +1,7 @@
 package xyz.archroid.testino.Adapter;
 
 import android.content.Context;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.imageview.ShapeableImageView;
 
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 import xyz.archroid.testino.Helper.PrefrenceManager;
 import xyz.archroid.testino.Model.Exam;
@@ -46,6 +49,13 @@ public class ExamsAdapter extends RecyclerView.Adapter<ExamsAdapter.ViewHolder> 
 
         holder.textView_name.setText(exam.getEXAM_NAME());
 
+        //convert timestamp to human time
+        Calendar calendar = Calendar.getInstance(Locale.ENGLISH);
+        calendar.setTimeInMillis(Long.parseLong(exam.getEXAM_STARTTIME()) * 1000);
+        String date = DateFormat.format("H:mm - yyyy/MM/dd", calendar).toString();
+
+        holder.textView_startTime.setText(date);
+
         if (userType.equals("admin")) {
             holder.button_1.setOnClickListener(v -> {
                 //TODO Manage exam activity
@@ -63,7 +73,6 @@ public class ExamsAdapter extends RecyclerView.Adapter<ExamsAdapter.ViewHolder> 
             });
         } else {
             holder.button_3.setVisibility(View.GONE);
-
 
 
         }
