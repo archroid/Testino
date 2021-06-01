@@ -26,7 +26,6 @@
     <string name="exam_name">نام آزمون</string>
     <string name="question_count">تعداد سوالات</string>
     <string name="exam_start_time">زمان شروع آزمون</string>
-    <string name="exam_desc">توضیحات آزمون</string>
     <string name="exam_duration">مدت زمان آزمون (به دقیقه)</string>
 
 

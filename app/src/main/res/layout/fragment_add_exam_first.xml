@@ -15,7 +15,7 @@
         android:layout_height="match_parent">
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardView_image_exam_fragment"
+            android:id="@+id/cardView_image_exam_activity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="20dp"
@@ -23,7 +23,7 @@
             app:cardElevation="0dp">
 
             <ImageView
-                android:id="@+id/imageView_icon_exam_fragment"
+                android:id="@+id/imageView_icon_exam_activity"
                 android:layout_width="match_parent"
                 android:layout_height="139dp"
                 android:scaleType="centerCrop"
@@ -48,7 +48,7 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="30dp"
-        android:layout_below="@id/cardView_image_exam_fragment"
+        android:layout_below="@id/cardView_image_exam_activity"
         android:layout_marginBottom="20dp"
         app:boxCornerRadiusBottomEnd="10dp"
         app:boxCornerRadiusBottomStart="10dp"

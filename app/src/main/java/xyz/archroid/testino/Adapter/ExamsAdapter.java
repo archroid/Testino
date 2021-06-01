@@ -1,6 +1,7 @@
 package xyz.archroid.testino.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,9 +20,12 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
+import xyz.archroid.testino.Data.DeleteExamController;
+import xyz.archroid.testino.Data.TestinoAPI;
 import xyz.archroid.testino.Helper.PrefrenceManager;
 import xyz.archroid.testino.Model.Exam;
 import xyz.archroid.testino.R;
+import xyz.archroid.testino.ui.ExamActivity;
 
 public class ExamsAdapter extends RecyclerView.Adapter<ExamsAdapter.ViewHolder> {
 
@@ -58,8 +62,12 @@ public class ExamsAdapter extends RecyclerView.Adapter<ExamsAdapter.ViewHolder> 
 
         if (userType.equals("admin")) {
             holder.button_1.setOnClickListener(v -> {
-                //TODO Manage exam activity
-                Toast.makeText(context, "manage exam", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(context, ExamActivity.class);
+                intent.putExtra("id", exam.getEXAM_ID());
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+
             });
             holder.button_2.setOnClickListener(v -> {
                 //TODO Exam Answers Activity
@@ -67,8 +75,14 @@ public class ExamsAdapter extends RecyclerView.Adapter<ExamsAdapter.ViewHolder> 
 
             });
             holder.button_3.setOnClickListener(v -> {
-                //TODO Delete exam
-                Toast.makeText(context, "delete exam", Toast.LENGTH_SHORT).show();
+                TestinoAPI.deleteExamCallback deleteExamCallback = isSuccessful -> {
+                    if (isSuccessful) {
+                        Toast.makeText(context, "deleted", Toast.LENGTH_SHORT).show();
+                    }
+                };
+
+                DeleteExamController deleteExamController = new DeleteExamController(deleteExamCallback);
+                deleteExamController.start(exam.getEXAM_ID());
 
             });
         } else {
@@ -97,16 +111,16 @@ public class ExamsAdapter extends RecyclerView.Adapter<ExamsAdapter.ViewHolder> 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            textView_name = itemView.findViewById(R.id.textView_examName_exam_fragment);
-            textView_questionCount = itemView.findViewById(R.id.textView_questionCount_exam_fragment);
+            textView_name = itemView.findViewById(R.id.textView_examName_exam_activity);
+            textView_questionCount = itemView.findViewById(R.id.textView_questionCount_exam_activity);
             textView_startTime = itemView.findViewById(R.id.textView_duration_exam_fragment);
-            button_1 = itemView.findViewById(R.id.button_1_exam_item);
-            button_2 = itemView.findViewById(R.id.button_2_exam_item);
-            button_3 = itemView.findViewById(R.id.button_3_exam_item);
+            button_1 = itemView.findViewById(R.id.button_1_exam_activity);
+            button_2 = itemView.findViewById(R.id.button_2_exam_activity);
+            button_3 = itemView.findViewById(R.id.button_3_exam_activity);
             imageView_button_1 = itemView.findViewById(R.id.imageView_button_1);
             imageView_button_2 = itemView.findViewById(R.id.imageView_button_2);
             imageView_button_3 = itemView.findViewById(R.id.imageView_button_3);
-            imageView_icon = itemView.findViewById(R.id.imageView_icon_exam_fragment);
+            imageView_icon = itemView.findViewById(R.id.imageView_icon_exam_activity);
 
         }
     }
