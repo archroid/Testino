@@ -111,16 +111,16 @@ public class ExamsAdapter extends RecyclerView.Adapter<ExamsAdapter.ViewHolder> 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            textView_name = itemView.findViewById(R.id.textView_examName_exam_activity);
-            textView_questionCount = itemView.findViewById(R.id.textView_questionCount_exam_activity);
-            textView_startTime = itemView.findViewById(R.id.textView_duration_exam_fragment);
-            button_1 = itemView.findViewById(R.id.button_1_exam_activity);
-            button_2 = itemView.findViewById(R.id.button_2_exam_activity);
-            button_3 = itemView.findViewById(R.id.button_3_exam_activity);
+            textView_name = itemView.findViewById(R.id.textView_examName_exam_item);
+            textView_questionCount = itemView.findViewById(R.id.textView_questionCount_exam_item);
+            textView_startTime = itemView.findViewById(R.id.textView_startTime_exam_item);
+            button_1 = itemView.findViewById(R.id.button_1_exam_item);
+            button_2 = itemView.findViewById(R.id.button_2_exam_item);
+            button_3 = itemView.findViewById(R.id.button_3_exam_item);
             imageView_button_1 = itemView.findViewById(R.id.imageView_button_1);
             imageView_button_2 = itemView.findViewById(R.id.imageView_button_2);
             imageView_button_3 = itemView.findViewById(R.id.imageView_button_3);
-            imageView_icon = itemView.findViewById(R.id.imageView_icon_exam_activity);
+            imageView_icon = itemView.findViewById(R.id.imageView_icon_exam_item);
 
         }
     }

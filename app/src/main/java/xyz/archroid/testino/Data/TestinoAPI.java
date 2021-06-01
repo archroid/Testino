@@ -9,11 +9,12 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import xyz.archroid.testino.Model.Exam;
 import xyz.archroid.testino.Model.Id;
+import xyz.archroid.testino.Model.Question;
 import xyz.archroid.testino.Model.Status;
 import xyz.archroid.testino.Model.Token;
 
 public interface TestinoAPI {
-    String BASE_URL = "http://192.168.1.101:5000/";
+    String BASE_URL = "http://192.168.1.108:5000/";
 
 
     @GET("ping")
@@ -85,6 +86,12 @@ public interface TestinoAPI {
             @Field("bankId") String bankId
     );
 
+    @FormUrlEncoded
+    @POST("getQuestions")
+    Call<List<Question>> getQuestions(
+            @Field("id") String id
+    );
+
 
     interface TestNetworkCallback {
         void onResponse(Boolean isSuccessful);
@@ -136,6 +143,12 @@ public interface TestinoAPI {
 
     interface addQuestionCallback {
         void onResponse(Boolean isSuccessful, String id, String error);
+
+        void onFailure(String cause);
+    }
+
+    interface getQuestionsCallback {
+        void onResponse(Boolean isSuccessful, List<Question> questions, String error);
 
         void onFailure(String cause);
     }
