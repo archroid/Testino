@@ -36,7 +36,7 @@
         <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
-    <style name="Theme.Testino.AddExamActivity" parent="Theme.Testino">
+    <style name="Theme.Testino.PrimaryStatusbar" parent="Theme.Testino">
         <item name="android:statusBarColor">@color/primary</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
 

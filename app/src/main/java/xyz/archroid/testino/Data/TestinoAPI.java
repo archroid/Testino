@@ -8,6 +8,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import xyz.archroid.testino.Model.Exam;
+import xyz.archroid.testino.Model.Id;
 import xyz.archroid.testino.Model.Status;
 import xyz.archroid.testino.Model.Token;
 
@@ -65,6 +66,25 @@ public interface TestinoAPI {
             @Field("id") String examId
     );
 
+    @FormUrlEncoded
+    @POST("addQuestionBank")
+    Call<Id> addQuestionBank(
+            @Field("creator") String username,
+            @Field("name") String name
+    );
+
+    @FormUrlEncoded
+    @POST("addQuestion")
+    Call<Id> addQuestion(
+            @Field("title") String title,
+            @Field("A") String A,
+            @Field("B") String B,
+            @Field("C") String C,
+            @Field("D") String D,
+            @Field("answer") String answer,
+            @Field("bankId") String bankId
+    );
+
 
     interface TestNetworkCallback {
         void onResponse(Boolean isSuccessful);
@@ -108,6 +128,16 @@ public interface TestinoAPI {
         void onResponse(Boolean isSuccessful);
     }
 
+    interface addQuestionBankCallback {
+        void onResponse(Boolean isSuccessful, String id, String error);
 
+        void onFailure(String cause);
+    }
+
+    interface addQuestionCallback {
+        void onResponse(Boolean isSuccessful, String id, String error);
+
+        void onFailure(String cause);
+    }
 }
 

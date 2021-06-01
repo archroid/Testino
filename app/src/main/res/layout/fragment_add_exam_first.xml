@@ -18,86 +18,85 @@
             android:id="@+id/cardView_image_exam_activity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="20dp"
             app:cardBackgroundColor="@color/primary"
+            app:cardCornerRadius="20dp"
             app:cardElevation="0dp">
 
             <ImageView
                 android:id="@+id/imageView_icon_exam_activity"
                 android:layout_width="match_parent"
                 android:layout_height="139dp"
-                android:scaleType="centerCrop"
-                />
+                android:scaleType="centerCrop" />
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/image"
                 android:layout_gravity="center"
-                app:tint="@color/white"
-                />
+                android:src="@drawable/image"
+                app:tint="@color/white" />
         </com.google.android.material.card.MaterialCardView>
 
 
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputLayout_name_addExam_fragment"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_below="@id/cardView_image_exam_activity"
-        android:layout_marginBottom="20dp"
-        app:boxCornerRadiusBottomEnd="10dp"
-        app:boxCornerRadiusBottomStart="10dp"
-        app:boxCornerRadiusTopEnd="10dp"
-        app:boxCornerRadiusTopStart="10dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editText_name_addExam_fragment"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputLayout_name_addExam_fragment"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableRight="@drawable/exam"
-            android:drawablePadding="7dp"
-            android:drawableTint="@color/dark_text"
-            android:hint="@string/exam_title"
-            android:inputType="number"
-            android:textColor="@color/dark_text"
-            android:textColorHint="@color/dark_text" />
+            android:layout_below="@id/cardView_image_exam_activity"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="15dp"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText_name_addExam_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/exam"
+                android:drawablePadding="7dp"
+                android:drawableTint="@color/dark_text"
+                android:hint="@string/exam_title"
+                android:inputType="number"
+                android:textColor="@color/dark_text"
+                android:textColorHint="@color/dark_text"
+                android:textSize="14sp" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputLayout_desc_addExam_fragment"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/inputLayout_name_addExam_fragment"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginBottom="20dp"
-        app:boxCornerRadiusBottomEnd="10dp"
-        app:boxCornerRadiusBottomStart="10dp"
-        app:boxCornerRadiusTopEnd="10dp"
-        app:boxCornerRadiusTopStart="10dp">
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editText_desc_addExam_fragment"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputLayout_desc_addExam_fragment"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableRight="@drawable/desc"
-            android:drawablePadding="7dp"
-            android:drawableTint="@color/dark_text"
-            android:hint="@string/exam_desc"
-            android:inputType="number"
-            android:maxEms="100"
-            android:maxLines="3"
-            android:textColor="@color/dark_text"
-            android:textColorHint="@color/dark_text" />
+            android:layout_below="@id/inputLayout_name_addExam_fragment"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="20dp"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText_desc_addExam_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/desc"
+                android:drawablePadding="7dp"
+                android:drawableTint="@color/dark_text"
+                android:hint="@string/exam_desc"
+                android:inputType="number"
+                android:maxEms="100"
+                android:maxLines="3"
+                android:textColor="@color/dark_text"
+                android:textColorHint="@color/dark_text"
+                android:textSize="14sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
 
     </RelativeLayout>

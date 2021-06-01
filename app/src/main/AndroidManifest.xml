@@ -14,10 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Testino"
         tools:targetApi="n">
-        <activity android:name=".ui.ExamActivity"></activity>
+        <activity android:name=".ui.ExamActivity" android:theme="@style/Theme.Testino.PrimaryStatusbar"/>
         <activity
             android:name=".ui.AddExamActivity"
-            android:theme="@style/Theme.Testino.AddExamActivity" />
+            android:theme="@style/Theme.Testino.PrimaryStatusbar" />
         <activity android:name=".ui.MainActivity" />
         <activity
             android:name=".ui.AuthActivity"
