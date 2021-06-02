@@ -178,6 +178,5 @@
         </RelativeLayout>
     </LinearLayout>
 
-    <!-- TODO Questions list here -->
 </com.google.android.material.card.MaterialCardView>
 

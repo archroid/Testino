@@ -2,11 +2,14 @@ package xyz.archroid.testino.Data;
 
 import java.util.List;
 
+import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 import xyz.archroid.testino.Model.Exam;
 import xyz.archroid.testino.Model.Id;
 import xyz.archroid.testino.Model.Question;
@@ -14,7 +17,7 @@ import xyz.archroid.testino.Model.Status;
 import xyz.archroid.testino.Model.Token;
 
 public interface TestinoAPI {
-    String BASE_URL = "http://192.168.1.108:5000/";
+    String BASE_URL = "http://192.168.1.200:5000/";
 
 
     @GET("ping")
@@ -92,6 +95,13 @@ public interface TestinoAPI {
             @Field("id") String id
     );
 
+    @Multipart
+    @POST("uploadImage")
+    Call<Status> uploadImage(
+            @Part MultipartBody.Part image,
+            @Part("fileType") String fileType
+    );
+
 
     interface TestNetworkCallback {
         void onResponse(Boolean isSuccessful);
@@ -149,6 +159,13 @@ public interface TestinoAPI {
 
     interface getQuestionsCallback {
         void onResponse(Boolean isSuccessful, List<Question> questions, String error);
+
+        void onFailure(String cause);
+    }
+
+
+    interface uploadImageCallback{
+        void onResponse(Boolean isSuccessful, String status,String error);
 
         void onFailure(String cause);
     }
