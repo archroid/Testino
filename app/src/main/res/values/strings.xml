@@ -28,6 +28,8 @@
     <string name="exam_start_time">زمان شروع آزمون</string>
     <string name="exam_duration">مدت زمان آزمون (به دقیقه)</string>
     <string name="exam_creator">سازنده آزمون</string>
+    <string name="you_have_no_questions">شما هیچ سوالی ندارید</string>
+    <string name="you_have_no_exam">شما هیچ آزمونی ندارید</string>
 
 
 </resources>

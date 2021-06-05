@@ -2,6 +2,7 @@ package xyz.archroid.testino.ui;
 
 import android.os.Bundle;
 import android.text.format.DateFormat;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -10,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.card.MaterialCardView;
 
 import java.util.Calendar;
@@ -31,6 +33,7 @@ public class ExamActivity extends AppCompatActivity {
     private ImageView imageView_icon;
     private TextView textView_examName, textView_questionCount, textView_startTime, textView_duration, textView_desc, textView_creator;
     private MaterialCardView button_1, button_2, button_3;
+    private MaterialCardView cardView_noQuestion;
 
     private RecyclerView recyclerView_questions;
     private QuestionsAdapter questionsAdapter;
@@ -60,6 +63,8 @@ public class ExamActivity extends AppCompatActivity {
         textView_desc = findViewById(R.id.textView_examDesc_exam_activity);
         textView_creator = findViewById(R.id.textView_creator_exam_activity);
 
+        cardView_noQuestion = findViewById(R.id.cardView_noQuestion_exam_fragment);
+
 
         button_1 = findViewById(R.id.button_1_exam_activity);
         button_2 = findViewById(R.id.button_2_exam_activity);
@@ -74,8 +79,13 @@ public class ExamActivity extends AppCompatActivity {
         getQuestionsCallback = new TestinoAPI.getQuestionsCallback() {
             @Override
             public void onResponse(Boolean isSuccessful, List<Question> questions, String error) {
-                questionsAdapter = new QuestionsAdapter(questions,ExamActivity.this);
-                recyclerView_questions.setAdapter(questionsAdapter);
+                if (questions != null) {
+                    questionsAdapter = new QuestionsAdapter(questions, ExamActivity.this);
+                    recyclerView_questions.setAdapter(questionsAdapter);
+                } else {
+                    cardView_noQuestion.setVisibility(View.VISIBLE);
+                    recyclerView_questions.setVisibility(View.GONE);
+                }
             }
 
             @Override
@@ -95,14 +105,14 @@ public class ExamActivity extends AppCompatActivity {
 
                     textView_examName.setText(exam.getEXAM_NAME());
                     textView_creator.setText(exam.getEXAM_CREATOR());
+                    Glide.with(ExamActivity.this).load(exam.getEXAM_ICON_URL()).into(imageView_icon);
+
 //                    textView_questionCount.get();
 
                     textView_startTime.setText(date);
                     textView_duration.setText(exam.getEXAM_DURATION() + " دقیقه");
                     textView_desc.setText(exam.getEXAM_DESC());
                     examId = exam.getEXAM_ID();
-
-                    // Questions
 
                     GetQuestionsController getQuestionsController = new GetQuestionsController(getQuestionsCallback);
                     getQuestionsController.start(exam.getEXAM_QUESTION_BANK_ID());
@@ -122,7 +132,6 @@ public class ExamActivity extends AppCompatActivity {
         getExamController.start(examId);
 
 
-
         button_3.setOnClickListener(v -> {
             TestinoAPI.deleteExamCallback deleteExamCallback = isSuccessful -> {
                 if (isSuccessful) {
@@ -133,10 +142,6 @@ public class ExamActivity extends AppCompatActivity {
             DeleteExamController deleteExamController = new DeleteExamController(deleteExamCallback);
             deleteExamController.start(examId);
         });
-
-
-
-
 
 
     }

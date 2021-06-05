@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.imageview.ShapeableImageView;
 
@@ -58,6 +59,7 @@ public class ExamsAdapter extends RecyclerView.Adapter<ExamsAdapter.ViewHolder> 
         calendar.setTimeInMillis(Long.parseLong(exam.getEXAM_STARTTIME()) * 1000);
         String date = DateFormat.format("H:mm - yyyy/MM/dd", calendar).toString();
 
+        Glide.with(context).load(exam.getEXAM_ICON_URL()).into(holder.imageView_icon);
         holder.textView_startTime.setText(date);
 
         if (userType.equals("admin")) {

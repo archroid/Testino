@@ -14,10 +14,12 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.card.MaterialCardView;
 
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import xyz.archroid.testino.Adapter.ExamsAdapter;
 import xyz.archroid.testino.Data.GetExamsController;
 import xyz.archroid.testino.Data.TestinoAPI;
@@ -36,6 +38,7 @@ public class HomeFragment extends Fragment {
     private TextView textView_username;
 
     private MaterialCardView cardView_noExam;
+    private CircleImageView imageView_profile;
 
     private String userType;
 
@@ -52,6 +55,7 @@ public class HomeFragment extends Fragment {
         userType = PrefrenceManager.getInstance(getContext()).getUserType();
 
         textView_username = view.findViewById(R.id.textView_username_home_fragment);
+        imageView_profile = view.findViewById(R.id.imageView_profile_home_fragment);
         recyclerView = view.findViewById(R.id.recyclerView);
 
         cardView_noExam = view.findViewById(R.id.cardView_noExam_home_fragment);
@@ -62,6 +66,9 @@ public class HomeFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
+
+        Glide.with(this).load(PrefrenceManager.getInstance(getContext()).getIconUrl()).into(imageView_profile);
+
 
         if (!userType.equals("admin")){
             button_addExam.setVisibility(View.GONE);

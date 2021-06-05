@@ -27,24 +27,43 @@ public class PrefrenceManager {
         editor.putString("userType", userType).apply();
     }
 
-    public String getUserType() {
-        return sharedPreferences.getString("userType", null);
-    }
-
     public void putUsername(int username) {
         editor.putInt("username", username).apply();
-    }
-
-    public int getUsername() {
-        return sharedPreferences.getInt("username", 0);
     }
 
     public void putToken(String token) {
         editor.putString("token", token).apply();
     }
 
+    public void putIconUrl(String iconUrl) {
+        editor.putString("iconUrl", iconUrl).apply();
+    }
+
+    public void putName(String name) {
+        editor.putString("name", name).apply();
+    }
+
+
+
+
+    public String getUserType() {
+        return sharedPreferences.getString("userType", null);
+    }
+
+    public int getUsername() {
+        return sharedPreferences.getInt("username", 0);
+    }
+
     public String getToken() {
         return sharedPreferences.getString("token", null);
+    }
+
+    public String getIconUrl() {
+        return sharedPreferences.getString("iconUrl", null);
+    }
+
+    public String getName() {
+        return sharedPreferences.getString("name", null);
     }
 
 }

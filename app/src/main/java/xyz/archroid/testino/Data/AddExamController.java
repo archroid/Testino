@@ -7,7 +7,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import xyz.archroid.testino.Model.Status;
+import xyz.archroid.testino.Model.Id;
 
 public class AddExamController {
 
@@ -25,10 +25,10 @@ public class AddExamController {
                 .build();
 
         TestinoAPI testinoAPI = retrofit.create(TestinoAPI.class);
-        Call<Status> call = testinoAPI.addExam(name, desc, startTime, username, duration , null);
-        call.enqueue(new Callback<Status>() {
+        Call<Id> call = testinoAPI.addExam(name, desc, startTime, username, duration , null);
+        call.enqueue(new Callback<Id>() {
             @Override
-            public void onResponse(Call<Status> call, Response<Status> response) {
+            public void onResponse(Call<Id> call, Response<Id> response) {
                 if (response.isSuccessful()) {
                     addExamCallback.onResponse(true);
                 } else {
@@ -41,7 +41,7 @@ public class AddExamController {
             }
 
             @Override
-            public void onFailure(Call<Status> call, Throwable t) {
+            public void onFailure(Call<Id> call, Throwable t) {
                 addExamCallback.onFailure(t.getMessage());
 
             }

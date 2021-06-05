@@ -31,6 +31,7 @@ public class LoginFragment extends Fragment {
     private RelativeLayout layout_error;
     private TextView textView_error;
 
+    PrefrenceManager prefrenceManager;
 
     public LoginFragment() {
 
@@ -48,6 +49,8 @@ public class LoginFragment extends Fragment {
 
         layout_error = view.findViewById(R.id.layout_error);
         textView_error = view.findViewById(R.id.textView_error);
+
+        prefrenceManager  = PrefrenceManager.getInstance(getContext());
 
         btn_login = view.findViewById(R.id.btn_login);
 
@@ -74,9 +77,9 @@ public class LoginFragment extends Fragment {
             @Override
             public void onResponse(Boolean isSuccessful, String token, String error) {
                 if (isSuccessful) {
-                    PrefrenceManager.getInstance(getContext()).putToken(token);
-                    PrefrenceManager.getInstance(getContext()).putUsername(Integer.parseInt(editText_username.getText().toString().trim()));
-                    PrefrenceManager.getInstance(getContext()).putUserType("admin");
+                    prefrenceManager.putUsername(Integer.parseInt(editText_username.getText().toString().trim()));
+                    prefrenceManager.putToken(token);
+
                     startActivity(new Intent(getContext(), MainActivity.class));
                     getActivity().finish();
                 } else {
