@@ -31,6 +31,7 @@ public interface TestinoAPI {
             @Field("userType") String userType
     );
 
+
     @FormUrlEncoded
     @POST("register")
     Call<Token> register(

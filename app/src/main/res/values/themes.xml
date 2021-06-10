@@ -32,8 +32,7 @@
 
     <style name="Theme.Testino.LoginActivity" parent="Theme.Testino">
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
-        <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:windowTranslucentNavigation">true</item>
+<!--        <item name="android:windowTranslucentStatus">true</item>-->
     </style>
 
     <style name="Theme.Testino.PrimaryStatusbar" parent="Theme.Testino">

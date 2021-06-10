@@ -39,8 +39,8 @@
                 app:strokeWidth="0dp">
 
                 <com.google.android.material.imageview.ShapeableImageView
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:layout_margin="5dp"
                     android:src="@drawable/back"
                     app:tint="@color/white" />
@@ -48,331 +48,337 @@
 
         </RelativeLayout>
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardView_exam_prop"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/toolbar"
-            android:layout_marginLeft="6dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="6dp"
-            app:cardBackgroundColor="@color/card_background_blue"
-            app:cardCornerRadius="30dp"
-            app:cardElevation="0dp"
-            app:strokeColor="@color/stork_color"
-            app:strokeWidth="1dp">
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="match_parent">
+
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardView_exam_prop"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardBackgroundColor="@color/card_background"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="6dp"
+                    app:cardBackgroundColor="@color/card_background_blue"
                     app:cardCornerRadius="30dp"
-                    app:cardElevation="0dp">
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/stork_color"
+                    app:strokeWidth="1dp">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layoutDirection="rtl">
-
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
                         <com.google.android.material.card.MaterialCardView
-                            android:id="@+id/cardView_image_exam_activity"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:cardCornerRadius="20dp"
+                            app:cardBackgroundColor="@color/card_background"
+                            app:cardCornerRadius="30dp"
                             app:cardElevation="0dp">
 
-                            <ImageView
-                                android:id="@+id/imageView_icon_exam_activity"
+                            <RelativeLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="139dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/temp_exam_item" />
+                                android:layout_height="wrap_content"
+                                android:layoutDirection="rtl">
+
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cardView_image_exam_activity"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:cardCornerRadius="20dp"
+                                    app:cardElevation="0dp">
+
+                                    <ImageView
+                                        android:id="@+id/imageView_icon_exam_activity"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="139dp"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/temp_exam_item" />
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <TextView
+                                    android:id="@+id/textView_examName_exam_activity"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/cardView_image_exam_activity"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginRight="25dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:background="@null"
+                                    android:text="@string/exam_name"
+                                    android:textColor="@color/dark_text"
+                                    android:textSize="16sp" />
+
+                                <LinearLayout
+                                    android:id="@+id/linearLayout_exam_activity"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/textView_examName_exam_activity"
+                                    android:layout_marginRight="25dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/textView_questionCount_exam_activity"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:background="@null"
+                                        android:text="@string/question_count"
+                                        android:textColor="@color/dark_text_grey"
+                                        android:textSize="14sp" />
+
+
+                                    <ImageView
+                                        android:layout_width="15dp"
+                                        android:layout_height="15dp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="15dp"
+                                        android:src="@drawable/clock" />
+
+                                    <TextView
+                                        android:id="@+id/textView_startTime_exam_activity"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="5dp"
+                                        android:background="@null"
+                                        android:text="@string/exam_start_time"
+                                        android:textColor="@color/dark_text_grey"
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/linearLayout_exam_activity"
+                                    android:layout_marginRight="25dp"
+                                    android:layout_marginBottom="10dp">
+
+                                    <ImageView
+                                        android:layout_width="15dp"
+                                        android:layout_height="15dp"
+                                        android:layout_gravity="center"
+                                        android:src="@drawable/timer" />
+
+                                    <TextView
+                                        android:id="@+id/textView_duration_exam_activity"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="5dp"
+                                        android:background="@null"
+                                        android:text="@string/exam_duration"
+                                        android:textColor="@color/dark_text_grey"
+                                        android:textSize="14sp" />
+
+                                    <ImageView
+                                        android:layout_width="15dp"
+                                        android:layout_height="15dp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="15dp"
+                                        android:src="@drawable/person" />
+
+                                    <TextView
+                                        android:id="@+id/textView_creator_exam_activity"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="5dp"
+                                        android:background="@null"
+                                        android:text="@string/exam_creator"
+                                        android:textColor="@color/dark_text_grey"
+                                        android:textSize="14sp" />
+
+
+                                </LinearLayout>
+
+
+                            </RelativeLayout>
                         </com.google.android.material.card.MaterialCardView>
 
-                        <TextView
-                            android:id="@+id/textView_examName_exam_activity"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/cardView_image_exam_activity"
-                            android:layout_alignParentRight="true"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="25dp"
-                            android:layout_marginBottom="8dp"
-                            android:background="@null"
-                            android:text="@string/exam_name"
-                            android:textColor="@color/dark_text"
-                            android:textSize="16sp" />
-
-                        <LinearLayout
-                            android:id="@+id/linearLayout_exam_activity"
+                        <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_below="@id/textView_examName_exam_activity"
-                            android:layout_marginRight="25dp"
-                            android:layout_marginBottom="10dp"
-                            android:orientation="horizontal">
+                            android:padding="15dp">
+
 
                             <TextView
-                                android:id="@+id/textView_questionCount_exam_activity"
-                                android:layout_width="wrap_content"
+                                android:id="@+id/textView_examDesc_exam_activity"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginRight="25dp"
                                 android:background="@null"
-                                android:text="@string/question_count"
+                                android:maxLines="3"
+                                android:text="@string/exam_desc"
                                 android:textColor="@color/dark_text_grey"
                                 android:textSize="14sp" />
 
 
-                            <ImageView
-                                android:layout_width="15dp"
-                                android:layout_height="15dp"
-                                android:layout_gravity="center"
-                                android:layout_marginRight="15dp"
-                                android:src="@drawable/clock" />
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/button_1_exam_activity"
+                                android:layout_width="80dp"
+                                android:layout_height="40dp"
+                                android:layout_below="@id/textView_examDesc_exam_activity"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp"
+                                android:backgroundTint="@color/accent"
+                                android:clickable="true"
+                                android:focusable="true"
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
 
-                            <TextView
-                                android:id="@+id/textView_startTime_exam_activity"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginRight="5dp"
-                                android:background="@null"
-                                android:text="@string/exam_start_time"
-                                android:textColor="@color/dark_text_grey"
-                                android:textSize="14sp" />
-                        </LinearLayout>
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:id="@+id/imageView_button_1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="10dp"
+                                    android:src="@drawable/edit"
+                                    app:tint="@color/white" />
+                            </com.google.android.material.card.MaterialCardView>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/linearLayout_exam_activity"
-                            android:layout_marginRight="25dp"
-                            android:layout_marginBottom="10dp">
-
-                            <ImageView
-                                android:layout_width="15dp"
-                                android:layout_height="15dp"
-                                android:layout_gravity="center"
-                                android:src="@drawable/timer" />
-
-                            <TextView
-                                android:id="@+id/textView_duration_exam_activity"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginRight="5dp"
-                                android:background="@null"
-                                android:text="@string/exam_duration"
-                                android:textColor="@color/dark_text_grey"
-                                android:textSize="14sp" />
-
-                            <ImageView
-                                android:layout_width="15dp"
-                                android:layout_height="15dp"
-                                android:layout_gravity="center"
-                                android:layout_marginRight="15dp"
-                                android:src="@drawable/person" />
-
-                            <TextView
-                                android:id="@+id/textView_creator_exam_activity"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginRight="5dp"
-                                android:background="@null"
-                                android:text="@string/exam_creator"
-                                android:textColor="@color/dark_text_grey"
-                                android:textSize="14sp" />
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/button_2_exam_activity"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_below="@id/textView_examDesc_exam_activity"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_toRightOf="@id/button_1_exam_activity"
+                                android:backgroundTint="@color/card_background"
+                                android:clickable="true"
+                                android:focusable="true"
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
 
 
-                        </LinearLayout>
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:id="@+id/imageView_button_2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="10dp"
+                                    android:src="@drawable/answers"
+                                    app:tint="@color/dark_text_grey" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/button_3_exam_activity"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_below="@id/textView_examDesc_exam_activity"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="10dp"
+                                android:backgroundTint="@color/red"
+                                android:clickable="true"
+                                android:focusable="true"
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp"
+                                app:strokeWidth="0dp">
+
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:id="@+id/imageView_button_3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="10dp"
+                                    android:src="@drawable/delete"
+                                    app:tint="@color/white" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </RelativeLayout>
+                    </LinearLayout>
 
 
-                    </RelativeLayout>
                 </com.google.android.material.card.MaterialCardView>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="15dp">
-
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/cardView_exam_prop">
 
                     <TextView
-                        android:id="@+id/textView_examDesc_exam_activity"
-                        android:layout_width="match_parent"
+                        android:id="@+id/textView_examQuestions_exam_fragment"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:layout_marginLeft="25dp"
+                        android:layout_gravity="right"
+                        android:layout_marginTop="20dp"
                         android:layout_marginRight="25dp"
-                        android:background="@null"
-                        android:maxLines="3"
-                        android:text="@string/exam_desc"
-                        android:textColor="@color/dark_text_grey"
-                        android:textSize="14sp" />
+                        android:text="سوالات آزمون"
+                        android:textColor="@color/dark_text"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
 
-                    <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/button_1_exam_activity"
-                        android:layout_width="80dp"
-                        android:layout_height="40dp"
-                        android:layout_below="@id/textView_examDesc_exam_activity"
-                        android:layout_alignParentLeft="true"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10dp"
-                        android:backgroundTint="@color/accent"
-                        android:clickable="true"
-                        android:focusable="true"
-                        app:cardCornerRadius="12dp"
-                        app:cardElevation="0dp">
-
-                        <com.google.android.material.imageview.ShapeableImageView
-                            android:id="@+id/imageView_button_1"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_margin="10dp"
-                            android:src="@drawable/edit"
-                            app:tint="@color/white" />
-                    </com.google.android.material.card.MaterialCardView>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView_questions_exam_activity"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/textView_examQuestions_exam_fragment"
+                        android:padding="10dp" />
 
                     <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/button_2_exam_activity"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_below="@id/textView_examDesc_exam_activity"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_toRightOf="@id/button_1_exam_activity"
-                        android:backgroundTint="@color/card_background"
-                        android:clickable="true"
-                        android:focusable="true"
-                        app:cardCornerRadius="12dp"
-                        app:cardElevation="0dp">
-
-
-                        <com.google.android.material.imageview.ShapeableImageView
-                            android:id="@+id/imageView_button_2"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_margin="10dp"
-                            android:src="@drawable/answers"
-                            app:tint="@color/dark_text_grey" />
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/button_3_exam_activity"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_below="@id/textView_examDesc_exam_activity"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="10dp"
-                        android:backgroundTint="@color/red"
-                        android:clickable="true"
-                        android:focusable="true"
-                        app:cardCornerRadius="12dp"
+                        android:id="@+id/cardView_noQuestion_exam_fragment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layoutDirection="rtl"
+                        android:visibility="gone"
+                        app:cardBackgroundColor="@color/card_background"
+                        app:cardCornerRadius="16dp"
                         app:cardElevation="0dp"
                         app:strokeWidth="0dp">
 
-                        <com.google.android.material.imageview.ShapeableImageView
-                            android:id="@+id/imageView_button_3"
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_margin="10dp"
-                            android:src="@drawable/delete"
-                            app:tint="@color/white" />
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_margin="7dp"
+                                android:layoutDirection="rtl">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_margin="5dp"
+                                    android:src="@drawable/warning" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp"
+                                    android:text="@string/you_have_no_questions"
+                                    android:textColor="@color/dark_text"
+                                    android:textSize="14sp" />
+
+
+                            </LinearLayout>
+                        </RelativeLayout>
                     </com.google.android.material.card.MaterialCardView>
 
                 </RelativeLayout>
-            </LinearLayout>
+            </RelativeLayout>
 
+        </ScrollView>
 
-        </com.google.android.material.card.MaterialCardView>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/cardView_exam_prop">
-
-            <TextView
-
-                android:id="@+id/textView_examQuestions_exam_fragment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_gravity="right"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="25dp"
-                android:text="سوالات آزمون"
-                android:textColor="@color/dark_text"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@id/textView_examQuestions_exam_fragment"
-
-                >
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerView_questions_exam_activity"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="10dp" />
-            </ScrollView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardView_noQuestion_exam_fragment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layoutDirection="rtl"
-                android:visibility="gone"
-                app:cardBackgroundColor="@color/card_background"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="0dp"
-                app:strokeWidth="0dp">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_margin="7dp"
-                        android:layoutDirection="rtl">
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_margin="5dp"
-                            android:src="@drawable/warning" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            android:text="@string/you_have_no_questions"
-                            android:textColor="@color/dark_text"
-                            android:textSize="14sp" />
-
-
-                    </LinearLayout>
-                </RelativeLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-        </RelativeLayout>
     </RelativeLayout>
 
 </RelativeLayout>
