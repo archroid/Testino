@@ -82,6 +82,7 @@ public class ExamActivity extends AppCompatActivity {
                 if (questions != null) {
                     questionsAdapter = new QuestionsAdapter(questions, ExamActivity.this);
                     recyclerView_questions.setAdapter(questionsAdapter);
+                    textView_questionCount.setText(questions.size() + " سوال");
                 } else {
                     cardView_noQuestion.setVisibility(View.VISIBLE);
                     recyclerView_questions.setVisibility(View.GONE);
@@ -106,8 +107,6 @@ public class ExamActivity extends AppCompatActivity {
                     textView_examName.setText(exam.getEXAM_NAME());
                     textView_creator.setText(exam.getEXAM_CREATOR());
                     Glide.with(ExamActivity.this).load(exam.getEXAM_ICON_URL()).into(imageView_icon);
-
-//                    textView_questionCount.get();
 
                     textView_startTime.setText(date);
                     textView_duration.setText(exam.getEXAM_DURATION() + " دقیقه");

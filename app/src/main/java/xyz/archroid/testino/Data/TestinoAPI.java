@@ -13,11 +13,12 @@ import retrofit2.http.Part;
 import xyz.archroid.testino.Model.Exam;
 import xyz.archroid.testino.Model.Id;
 import xyz.archroid.testino.Model.Question;
+import xyz.archroid.testino.Model.QuestionBank;
 import xyz.archroid.testino.Model.Status;
 import xyz.archroid.testino.Model.Token;
 
 public interface TestinoAPI {
-    String BASE_URL = "http://192.168.1.108:5000/";
+    String BASE_URL = "http://192.168.1.104:5000/";
 
 
     @GET("ping")
@@ -103,6 +104,17 @@ public interface TestinoAPI {
             @Part("fileType") String fileType
     );
 
+    @FormUrlEncoded
+    @POST("getQuestionBanks")
+    Call<List<QuestionBank>> getQuestionBanks(
+            @Field("creator") String username
+    );
+
+    @FormUrlEncoded
+    @POST("deleteQuestionBank")
+    Call<Status> deleteQuestionBank(
+            @Field("id") String id
+    );
 
     interface TestNetworkCallback {
         void onResponse(Boolean isSuccessful);
@@ -164,11 +176,23 @@ public interface TestinoAPI {
         void onFailure(String cause);
     }
 
-
-    interface uploadImageCallback{
-        void onResponse(Boolean isSuccessful, String status,String error);
+    interface getQuestionBanksCallback {
+        void onResponse(Boolean isSuccessful, List<QuestionBank> questionBanks, String error);
 
         void onFailure(String cause);
     }
+
+
+    interface uploadImageCallback {
+        void onResponse(Boolean isSuccessful, String status, String error);
+
+        void onFailure(String cause);
+    }
+    interface deleteQuestionBankCallback {
+        void onResponse(Boolean isSuccessful);
+
+        void onFailure(String cause);
+    }
+
 }
 
