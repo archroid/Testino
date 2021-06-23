@@ -30,6 +30,9 @@
     <string name="exam_creator">سازنده آزمون</string>
     <string name="you_have_no_questions">شما هیچ سوالی ندارید</string>
     <string name="you_have_no_exam">شما هیچ آزمونی ندارید</string>
+    <string name="no_question_bank">شما هیچ بانک سوالی ندارید</string>
+    <string name="questionBank_name">عنوان بانک سوال</string>
+    <string name="new_qeustion_bank">بانک سوال جدید</string>
 
 
 </resources>

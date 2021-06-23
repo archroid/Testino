@@ -18,7 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Testino"
         tools:targetApi="n">
-        <activity android:name=".ui.QuestionBankActivity"></activity>
+        <activity android:name=".ui.QuestionBankActivity" />
         <activity
             android:name=".ui.ExamActivity"
             android:theme="@style/Theme.Testino.PrimaryStatusbar" />

@@ -1,5 +1,6 @@
 package xyz.archroid.testino.Data;
 
+import java.net.IDN;
 import java.util.List;
 
 import okhttp3.MultipartBody;
@@ -18,7 +19,7 @@ import xyz.archroid.testino.Model.Status;
 import xyz.archroid.testino.Model.Token;
 
 public interface TestinoAPI {
-    String BASE_URL = "http://192.168.1.104:5000/";
+    String BASE_URL = "http://192.168.1.100:5000/";
 
 
     @GET("ping")
@@ -115,6 +116,8 @@ public interface TestinoAPI {
     Call<Status> deleteQuestionBank(
             @Field("id") String id
     );
+
+
 
     interface TestNetworkCallback {
         void onResponse(Boolean isSuccessful);
