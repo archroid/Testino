@@ -112,6 +112,12 @@ public interface TestinoAPI {
     );
 
     @FormUrlEncoded
+    @POST("getQuestionBank")
+    Call<QuestionBank> getQuestionBank(
+            @Field("id") String id
+    );
+
+    @FormUrlEncoded
     @POST("deleteQuestionBank")
     Call<Status> deleteQuestionBank(
             @Field("id") String id
@@ -195,6 +201,10 @@ public interface TestinoAPI {
         void onResponse(Boolean isSuccessful);
 
         void onFailure(String cause);
+    }
+
+    interface getQuestionBankCallback{
+        void onResponse()
     }
 
 }

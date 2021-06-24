@@ -63,7 +63,7 @@ public class ExamActivity extends AppCompatActivity {
         textView_desc = findViewById(R.id.textView_examDesc_exam_activity);
         textView_creator = findViewById(R.id.textView_creator_exam_activity);
 
-        cardView_noQuestion = findViewById(R.id.cardView_noQuestion_exam_fragment);
+        cardView_noQuestion = findViewById(R.id.cardView_noQuestion_exam_activity);
 
 
         button_1 = findViewById(R.id.button_1_exam_activity);

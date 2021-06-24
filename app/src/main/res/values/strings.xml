@@ -33,6 +33,7 @@
     <string name="no_question_bank">شما هیچ بانک سوالی ندارید</string>
     <string name="questionBank_name">عنوان بانک سوال</string>
     <string name="new_qeustion_bank">بانک سوال جدید</string>
+    <string name="questions">سوالات</string>
 
 
 </resources>

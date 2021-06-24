@@ -312,14 +312,14 @@
                     android:layout_below="@id/cardView_exam_prop">
 
                     <TextView
-                        android:id="@+id/textView_examQuestions_exam_fragment"
+                        android:id="@+id/textView_examQuestions_exam_activity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_gravity="right"
                         android:layout_marginTop="20dp"
                         android:layout_marginRight="25dp"
-                        android:text="سوالات آزمون"
+                        android:text="@string/questions"
                         android:textColor="@color/dark_text"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -329,11 +329,11 @@
                         android:id="@+id/recyclerView_questions_exam_activity"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_below="@id/textView_examQuestions_exam_fragment"
+                        android:layout_below="@id/textView_examQuestions_exam_activity"
                         android:padding="10dp" />
 
                     <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/cardView_noQuestion_exam_fragment"
+                        android:id="@+id/cardView_noQuestion_exam_activity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"

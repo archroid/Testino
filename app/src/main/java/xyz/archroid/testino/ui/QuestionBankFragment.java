@@ -80,36 +80,31 @@ public class QuestionBankFragment extends Fragment {
 
         button_addQBank.setOnClickListener(v -> {
 
-            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
             LayoutInflater dialogInflater = requireActivity().getLayoutInflater();
-            View dialogView = inflater.inflate(R.layout.dialog_add_qbank, null);
-            builder.setView(dialogView)
-                    .setPositiveButton("ایجاد", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int id) {
-                            addQuestionBankCallback = new TestinoAPI.addQuestionBankCallback() {
-                                @Override
-                                public void onResponse(Boolean isSuccessful, String id, String error) {
+            View dialogView = dialogInflater.inflate(R.layout.dialog_add_qbank, null);
 
-                                }
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity())
+                    .setView(dialogView)
+                    .setPositiveButton("ایجاد", (dialog, id) -> {
+                        addQuestionBankCallback = new TestinoAPI.addQuestionBankCallback() {
+                            @Override
+                            public void onResponse(Boolean isSuccessful, String id, String error) {
 
-                                @Override
-                                public void onFailure(String cause) {
+                            }
 
-                                }
-                            };
+                            @Override
+                            public void onFailure(String cause) {
 
-                            AddQuestionBankController addQuestionBankController = new AddQuestionBankController(addQuestionBankCallback);
-                            TextInputEditText editText_qBankName_qBank_dialog = dialogView.findViewById(R.id.editText_qBankName_qBank_dialog);
-                            addQuestionBankController.start(editText_qBankName_qBank_dialog.getText().toString(),String.valueOf(PrefrenceManager.getInstance(getContext()).getUsername()));
+                            }
+                        };
 
-                        }
+                        AddQuestionBankController addQuestionBankController = new AddQuestionBankController(addQuestionBankCallback);
+                        TextInputEditText editText_qBankName_qBank_dialog = dialogView.findViewById(R.id.editText_qBankName_qBank_dialog);
+                        addQuestionBankController.start(editText_qBankName_qBank_dialog.getText().toString(),String.valueOf(PrefrenceManager.getInstance(getContext()).getUsername()));
+
                     })
-                    .setNegativeButton("لغو", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            dialog.dismiss();
-                        }
-                    }).create();
+                    .setNegativeButton("لغو", (dialog, id) -> dialog.dismiss());
+
             builder.show();
 
 
